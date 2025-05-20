@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carte interactive des sites de collecte de pucerons</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <style>
+    body { margin:0; padding:0; font-family: sans-serif; }
+    #map { width: 50%; height: 100vh; float: left; }
+    #chart { width: 50%; height: 100vh; float: left; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <div id="chart"></div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <!-- Plotly JS -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <!-- Données des sites -->
+  <script src="sites_data.js"></script>
+
+  <!-- Script principal -->
+  <script>
+    // Initialisation de la carte
+    const map = L.map('map').setView([48.0, -3.5], 8);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Création des marqueurs et interactions
+    sites.forEach((site, idx) => {
+      const marker = L.circleMarker(site.coords, {
+        color: site.color,
+        radius: 8,
+        fillOpacity: 0.8
+      }).addTo(map);
+
+      marker.on('mouseover', () => highlightTrace(idx));
+      marker.on('mouseout', () => resetTraces());
+    });
+
+    // Préparation des courbes pour Plotly
+    const traces = sites.map(site => ({
+	x: site.data.map(d => d.date),
+      y: site.data.map(d => d.count),
+      name: site.name,
+      mode: 'lines+markers',
+      line: { color: site.color, width: 2 },
+      marker: { size: 6 }
+    }));
+
+    // Affichage du graphique
+    Plotly.newPlot('chart', traces, {
+      title: 'Nombre de pucerons capturés par jour',
+      xaxis: { title: 'Date' },
+      yaxis: { title: 'Nombre de pucerons' }
+    });
+
+    // Surligner un site au survol
+    function highlightTrace(index) {
+      const update = {
+        'line.width': sites.map((_, i) => i === index ? 4 : 1),
+        'opacity': sites.map((_, i) => i === index ? 1 : 0.2)
+      };
+      Plotly.restyle('chart', update);
+    }
+
+    // Réinitialiser l'affichage
+    function resetTraces() {
+      const update = {
+        'line.width': sites.map(() => 2),
+        'opacity': sites.map(() => 1)
+      };
+      Plotly.restyle('chart', update);
+    }
+  </script>
+</body>
+</html>
