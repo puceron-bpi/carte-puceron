@@ -425,23 +425,23 @@ const sites = [
       },
       {
         "date": "2025-05-29",
-        "count": 83
+        "count": 94
       },
       {
         "date": "2025-05-30",
-        "count": 82
+        "count": 105
       },
       {
         "date": "2025-05-31",
-        "count": 81
+        "count": 115
       },
       {
         "date": "2025-06-01",
-        "count": 80
+        "count": 126
       },
       {
         "date": "2025-06-02",
-        "count": 79
+        "count": 137
       }
     ]
   },
@@ -677,15 +677,15 @@ const sites = [
       },
       {
         "date": "2025-05-31",
-        "count": 23
+        "count": 20
       },
       {
         "date": "2025-06-01",
-        "count": 23
+        "count": 17
       },
       {
         "date": "2025-06-02",
-        "count": 22
+        "count": 14
       }
     ]
   },
