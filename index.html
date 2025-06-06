@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Carte interactive des sites de collecte de pucerons</title>
 
   <!-- Leaflet CSS -->
@@ -10,15 +10,68 @@
 
   <style>
     body { margin: 0; padding: 0; font-family: sans-serif; }
-    #map { width: 50%; height: 100vh; float: left; }
+    #map { width: 50%; height: 100vh; float: left; position: relative; }
     #chart-container { width: 50%; height: 100vh; float: left; display: flex; flex-direction: column; }
     #chart { flex: 1; }
     #reset-button { padding: 10px; border: none; background-color: #333; color: white; cursor: pointer; font-size: 1rem; }
     #reset-button:hover { background-color: #555; }
+
+    /* Légende */
+    #legend {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background-color: white;
+      border-radius: 8px;
+      padding: 10px 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      font-size: 0.95rem;
+      z-index: 1000;
+      max-width: 300px;
+    }
+
+    #legend h4 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .legend-border, .legend-center {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      margin-right: 8px;
+      vertical-align: middle;
+      border-radius: 50%;
+    }
+
+    .legend-border {
+      background: white;
+      border: 3px solid #e41a1c; /* exemple */
+    }
+
+    .legend-center {
+      background: #e41a1c;
+      border: 2px solid black;
+    }
+
+    .legend-note {
+      font-size: 0.85em;
+      color: #555;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
-  <div id="map"></div>
+  <div id="map">
+    <div id="legend">
+      <h4>Légende</h4>
+      <p><span class="legend-border"></span> Couleur du site (correspond à la courbe)</p>
+      <p><span class="legend-center"></span> Centre coloré : taux estimé de <em>Myzus</em> (%)</p>
+      <p style="font-size: 0.9em; margin-top: 8px;">Survolez un point pour voir la date et le taux</p>
+      <p class="legend-note">⚠️ Le taux de <em>Myzus</em> est estimé sur un échantillon de 20 pucerons capturés par site.</p>
+    </div>
+  </div>
+
   <div id="chart-container">
     <div id="chart"></div>
     <button id="reset-button" onclick="resetZoom()">Afficher toutes les données</button>
@@ -28,30 +81,35 @@
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <!-- Plotly JS -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <!-- Données des sites -->
+  <!-- Données -->
   <script src="sites_data.js"></script>
+  <script src="https://cdn.plot.ly/plotly-locale-fr-latest.js"></script>
 
-  <!-- Script principal -->
+
   <script>
-    // Initialisation de la carte
     const map = L.map('map').setView([48.0, -3.5], 8);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
-    // Création des marqueurs et interactions
     sites.forEach((site, idx) => {
       const marker = L.circleMarker(site.coords, {
         color: site.color,
         radius: 8,
-        fillOpacity: 0.8
+        fillOpacity: 0.8,
+        fillColor: site.myzusColor || 'white'
       }).addTo(map);
+
+      if (site.myzusDate && site.myzusTaux !== undefined) {
+        marker.bindTooltip(`<strong>${site.name}</strong><br>Date : ${site.myzusDate}<br>Taux Myzus : ${site.myzusTaux}%`);
+      } else {
+        marker.bindTooltip(`<strong>${site.name}</strong><br>Aucune donnée Myzus récente`);
+      }
 
       marker.on('mouseover', () => highlightTrace(idx));
       marker.on('mouseout', () => resetTraces());
     });
 
-    // Préparation des courbes pour Plotly
     const traces = sites.map(site => ({
       x: site.data.map(d => d.date),
       y: site.data.map(d => d.count),
@@ -61,28 +119,19 @@
       marker: { size: 6 }
     }));
 
-    // Récupérer toutes les dates dans les données
     const allDates = sites.flatMap(site => site.data.map(d => new Date(d.date)));
-
-    // Trouver les bornes globales
     const maxDate = new Date(Math.max(...allDates));
     const minDate = new Date(Math.min(...allDates));
-
-    // Calcul des 7 derniers jours
     const initialStartDate = new Date(maxDate);
     initialStartDate.setDate(maxDate.getDate() - 7);
-
-    // Affichage du graphique avec plage réduite par défaut et y-axis dynamique
+    Plotly.setPlotConfig({ locale: 'fr' });
     Plotly.newPlot('chart', traces, {
       title: 'Nombre de pucerons capturés par jour',
       xaxis: {
         title: 'Date',
         type: 'date',
         range: [initialStartDate.toISOString(), maxDate.toISOString()],
-        rangeslider: {
-          visible: true,
-          yaxis: { visible: false }
-        }
+        rangeslider: { visible: true, yaxis: { visible: false } }
       },
       yaxis: {
         title: 'Nombre de pucerons',
@@ -90,14 +139,12 @@
       }
     });
 
-    // Réinitialiser le zoom sur l'ensemble des données
     function resetZoom() {
       Plotly.relayout('chart', {
         'xaxis.range': [minDate.toISOString(), maxDate.toISOString()]
       });
     }
 
-    // Surligner un site au survol
     function highlightTrace(index) {
       const update = {
         'line.width': sites.map((_, i) => i === index ? 4 : 1),
@@ -106,7 +153,6 @@
       Plotly.restyle('chart', update);
     }
 
-    // Réinitialiser l'affichage des courbes
     function resetTraces() {
       const update = {
         'line.width': sites.map(() => 2),
