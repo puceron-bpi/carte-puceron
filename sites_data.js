@@ -194,7 +194,7 @@ const sites = [
       },
       {
         "date": "2025-05-06",
-        "count": 170
+        "count": 169
       },
       {
         "date": "2025-05-07",
@@ -896,9 +896,49 @@ const sites = [
       {
         "date": "2025-05-23",
         "count": 2
+      },
+      {
+        "date": "2025-05-24",
+        "count": 1
+      },
+      {
+        "date": "2025-05-25",
+        "count": 1
+      },
+      {
+        "date": "2025-05-26",
+        "count": 1
+      },
+      {
+        "date": "2025-05-27",
+        "count": 0
+      },
+      {
+        "date": "2025-05-28",
+        "count": 0
+      },
+      {
+        "date": "2025-05-29",
+        "count": 1
+      },
+      {
+        "date": "2025-05-30",
+        "count": 1
+      },
+      {
+        "date": "2025-05-31",
+        "count": 1
+      },
+      {
+        "date": "2025-06-01",
+        "count": 2
+      },
+      {
+        "date": "2025-06-02",
+        "count": 2
       }
     ],
-    "myzusDate": "23 mai",
+    "myzusDate": "02 juin",
     "myzusTaux": 0.0,
     "myzusColor": "#fff5f0"
   },
