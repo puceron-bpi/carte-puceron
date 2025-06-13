@@ -162,6 +162,26 @@ const sites = [
       {
         "date": "2025-06-05",
         "count": 19
+      },
+      {
+        "date": "2025-06-06",
+        "count": 27
+      },
+      {
+        "date": "2025-06-07",
+        "count": 35
+      },
+      {
+        "date": "2025-06-08",
+        "count": 44
+      },
+      {
+        "date": "2025-06-09",
+        "count": 52
+      },
+      {
+        "date": "2025-06-10",
+        "count": 60
       }
     ],
     "myzusDate": null,
@@ -303,6 +323,38 @@ const sites = [
       {
         "date": "2025-06-02",
         "count": 29
+      },
+      {
+        "date": "2025-06-03",
+        "count": 28
+      },
+      {
+        "date": "2025-06-04",
+        "count": 28
+      },
+      {
+        "date": "2025-06-05",
+        "count": 27
+      },
+      {
+        "date": "2025-06-06",
+        "count": 26
+      },
+      {
+        "date": "2025-06-07",
+        "count": 26
+      },
+      {
+        "date": "2025-06-08",
+        "count": 25
+      },
+      {
+        "date": "2025-06-09",
+        "count": 25
+      },
+      {
+        "date": "2025-06-10",
+        "count": 24
       }
     ],
     "myzusDate": null,
@@ -1371,11 +1423,23 @@ const sites = [
       {
         "date": "2025-06-02",
         "count": 153
+      },
+      {
+        "date": "2025-06-03",
+        "count": 136
+      },
+      {
+        "date": "2025-06-04",
+        "count": 120
+      },
+      {
+        "date": "2025-06-05",
+        "count": 104
       }
     ],
-    "myzusDate": "02 juin",
-    "myzusTaux": 0.0,
-    "myzusColor": "#fff5f0"
+    "myzusDate": "05 juin",
+    "myzusTaux": 5.0,
+    "myzusColor": "#ffede5"
   },
   {
     "name": "Plogonnec",
