@@ -182,6 +182,30 @@ const sites = [
       {
         "date": "2025-06-10",
         "count": 60
+      },
+      {
+        "date": "2025-06-11",
+        "count": 84
+      },
+      {
+        "date": "2025-06-12",
+        "count": 109
+      },
+      {
+        "date": "2025-06-13",
+        "count": 104
+      },
+      {
+        "date": "2025-06-14",
+        "count": 99
+      },
+      {
+        "date": "2025-06-15",
+        "count": 95
+      },
+      {
+        "date": "2025-06-16",
+        "count": 90
       }
     ],
     "myzusDate": null,
@@ -355,6 +379,30 @@ const sites = [
       {
         "date": "2025-06-10",
         "count": 24
+      },
+      {
+        "date": "2025-06-11",
+        "count": 104
+      },
+      {
+        "date": "2025-06-12",
+        "count": 184
+      },
+      {
+        "date": "2025-06-13",
+        "count": 152
+      },
+      {
+        "date": "2025-06-14",
+        "count": 119
+      },
+      {
+        "date": "2025-06-15",
+        "count": 86
+      },
+      {
+        "date": "2025-06-16",
+        "count": 54
       }
     ],
     "myzusDate": null,
@@ -512,11 +560,67 @@ const sites = [
       {
         "date": "2025-06-02",
         "count": 137
+      },
+      {
+        "date": "2025-06-03",
+        "count": 114
+      },
+      {
+        "date": "2025-06-04",
+        "count": 91
+      },
+      {
+        "date": "2025-06-05",
+        "count": 68
+      },
+      {
+        "date": "2025-06-06",
+        "count": 62
+      },
+      {
+        "date": "2025-06-07",
+        "count": 56
+      },
+      {
+        "date": "2025-06-08",
+        "count": 49
+      },
+      {
+        "date": "2025-06-09",
+        "count": 43
+      },
+      {
+        "date": "2025-06-10",
+        "count": 37
+      },
+      {
+        "date": "2025-06-11",
+        "count": 50
+      },
+      {
+        "date": "2025-06-12",
+        "count": 62
+      },
+      {
+        "date": "2025-06-13",
+        "count": 53
+      },
+      {
+        "date": "2025-06-14",
+        "count": 43
+      },
+      {
+        "date": "2025-06-15",
+        "count": 33
+      },
+      {
+        "date": "2025-06-16",
+        "count": 24
       }
     ],
-    "myzusDate": "28 mai",
-    "myzusTaux": 0.0,
-    "myzusColor": "#fff5f0"
+    "myzusDate": "16 juin",
+    "myzusTaux": 10.0,
+    "myzusColor": "#fee5d8"
   },
   {
     "name": "Plougar",
@@ -625,11 +729,55 @@ const sites = [
       {
         "date": "2025-06-05",
         "count": 3
+      },
+      {
+        "date": "2025-06-06",
+        "count": 3
+      },
+      {
+        "date": "2025-06-07",
+        "count": 4
+      },
+      {
+        "date": "2025-06-08",
+        "count": 4
+      },
+      {
+        "date": "2025-06-09",
+        "count": 4
+      },
+      {
+        "date": "2025-06-10",
+        "count": 5
+      },
+      {
+        "date": "2025-06-11",
+        "count": 6
+      },
+      {
+        "date": "2025-06-12",
+        "count": 8
+      },
+      {
+        "date": "2025-06-13",
+        "count": 10
+      },
+      {
+        "date": "2025-06-14",
+        "count": 13
+      },
+      {
+        "date": "2025-06-15",
+        "count": 16
+      },
+      {
+        "date": "2025-06-16",
+        "count": 19
       }
     ],
-    "myzusDate": "05 juin",
-    "myzusTaux": 0.0,
-    "myzusColor": "#fff5f0"
+    "myzusDate": "16 juin",
+    "myzusTaux": 15.0,
+    "myzusColor": "#fed9c9"
   },
   {
     "name": "Plabennec",
@@ -786,11 +934,55 @@ const sites = [
       {
         "date": "2025-06-05",
         "count": 2
+      },
+      {
+        "date": "2025-06-06",
+        "count": 3
+      },
+      {
+        "date": "2025-06-07",
+        "count": 3
+      },
+      {
+        "date": "2025-06-08",
+        "count": 3
+      },
+      {
+        "date": "2025-06-09",
+        "count": 3
+      },
+      {
+        "date": "2025-06-10",
+        "count": 4
+      },
+      {
+        "date": "2025-06-11",
+        "count": 4
+      },
+      {
+        "date": "2025-06-12",
+        "count": 4
+      },
+      {
+        "date": "2025-06-13",
+        "count": 6
+      },
+      {
+        "date": "2025-06-14",
+        "count": 7
+      },
+      {
+        "date": "2025-06-15",
+        "count": 9
+      },
+      {
+        "date": "2025-06-16",
+        "count": 11
       }
     ],
-    "myzusDate": "05 juin",
-    "myzusTaux": 0.0,
-    "myzusColor": "#fff5f0"
+    "myzusDate": "16 juin",
+    "myzusTaux": 5.0,
+    "myzusColor": "#ffede5"
   },
   {
     "name": "Ploeuc",
@@ -903,55 +1095,55 @@ const sites = [
       },
       {
         "date": "2025-05-06",
-        "count": 11
+        "count": 0
       },
       {
         "date": "2025-05-07",
-        "count": 10
+        "count": 0
       },
       {
         "date": "2025-05-08",
-        "count": 10
+        "count": 0
       },
       {
         "date": "2025-05-09",
-        "count": 9
+        "count": 0
       },
       {
         "date": "2025-05-10",
-        "count": 8
+        "count": 0
       },
       {
         "date": "2025-05-11",
-        "count": 7
+        "count": 0
       },
       {
         "date": "2025-05-12",
-        "count": 7
+        "count": 1
       },
       {
         "date": "2025-05-13",
-        "count": 6
+        "count": 1
       },
       {
         "date": "2025-05-14",
-        "count": 5
+        "count": 1
       },
       {
         "date": "2025-05-15",
-        "count": 4
+        "count": 1
       },
       {
         "date": "2025-05-16",
-        "count": 4
+        "count": 1
       },
       {
         "date": "2025-05-17",
-        "count": 3
+        "count": 1
       },
       {
         "date": "2025-05-18",
-        "count": 2
+        "count": 1
       },
       {
         "date": "2025-05-19",
@@ -1012,9 +1204,41 @@ const sites = [
       {
         "date": "2025-06-02",
         "count": 2
+      },
+      {
+        "date": "2025-06-03",
+        "count": 2
+      },
+      {
+        "date": "2025-06-04",
+        "count": 2
+      },
+      {
+        "date": "2025-06-05",
+        "count": 1
+      },
+      {
+        "date": "2025-06-06",
+        "count": 1
+      },
+      {
+        "date": "2025-06-07",
+        "count": 1
+      },
+      {
+        "date": "2025-06-08",
+        "count": 0
+      },
+      {
+        "date": "2025-06-09",
+        "count": 0
+      },
+      {
+        "date": "2025-06-10",
+        "count": 0
       }
     ],
-    "myzusDate": "02 juin",
+    "myzusDate": "10 juin",
     "myzusTaux": 0.0,
     "myzusColor": "#fff5f0"
   },
@@ -1149,11 +1373,51 @@ const sites = [
       {
         "date": "2025-06-06",
         "count": 12
+      },
+      {
+        "date": "2025-06-07",
+        "count": 10
+      },
+      {
+        "date": "2025-06-08",
+        "count": 8
+      },
+      {
+        "date": "2025-06-09",
+        "count": 6
+      },
+      {
+        "date": "2025-06-10",
+        "count": 4
+      },
+      {
+        "date": "2025-06-11",
+        "count": 4
+      },
+      {
+        "date": "2025-06-12",
+        "count": 3
+      },
+      {
+        "date": "2025-06-13",
+        "count": 3
+      },
+      {
+        "date": "2025-06-14",
+        "count": 4
+      },
+      {
+        "date": "2025-06-15",
+        "count": 5
+      },
+      {
+        "date": "2025-06-16",
+        "count": 6
       }
     ],
-    "myzusDate": "06 juin",
-    "myzusTaux": 0.0,
-    "myzusColor": "#fff5f0"
+    "myzusDate": "16 juin",
+    "myzusTaux": 25.0,
+    "myzusColor": "#fcbba1"
   },
   {
     "name": "Hanvec",
@@ -1294,9 +1558,41 @@ const sites = [
       {
         "date": "2025-06-10",
         "count": 15
+      },
+      {
+        "date": "2025-06-11",
+        "count": 61
+      },
+      {
+        "date": "2025-06-12",
+        "count": 108
+      },
+      {
+        "date": "2025-06-13",
+        "count": 88
+      },
+      {
+        "date": "2025-06-14",
+        "count": 67
+      },
+      {
+        "date": "2025-06-15",
+        "count": 46
+      },
+      {
+        "date": "2025-06-16",
+        "count": 26
+      },
+      {
+        "date": "2025-06-17",
+        "count": 33
+      },
+      {
+        "date": "2025-06-18",
+        "count": 40
       }
     ],
-    "myzusDate": "10 juin",
+    "myzusDate": "18 juin",
     "myzusTaux": 25.0,
     "myzusColor": "#fcbba1"
   },
@@ -1435,11 +1731,43 @@ const sites = [
       {
         "date": "2025-06-05",
         "count": 104
+      },
+      {
+        "date": "2025-06-06",
+        "count": 92
+      },
+      {
+        "date": "2025-06-07",
+        "count": 80
+      },
+      {
+        "date": "2025-06-08",
+        "count": 67
+      },
+      {
+        "date": "2025-06-09",
+        "count": 55
+      },
+      {
+        "date": "2025-06-10",
+        "count": 43
+      },
+      {
+        "date": "2025-06-11",
+        "count": 86
+      },
+      {
+        "date": "2025-06-12",
+        "count": 128
+      },
+      {
+        "date": "2025-06-13",
+        "count": 171
       }
     ],
-    "myzusDate": "05 juin",
-    "myzusTaux": 5.0,
-    "myzusColor": "#ffede5"
+    "myzusDate": "13 juin",
+    "myzusTaux": 0.0,
+    "myzusColor": "#fff5f0"
   },
   {
     "name": "Plogonnec",
@@ -1536,10 +1864,42 @@ const sites = [
       {
         "date": "2025-06-05",
         "count": 5
+      },
+      {
+        "date": "2025-06-06",
+        "count": 4
+      },
+      {
+        "date": "2025-06-07",
+        "count": 3
+      },
+      {
+        "date": "2025-06-08",
+        "count": 2
+      },
+      {
+        "date": "2025-06-09",
+        "count": 1
+      },
+      {
+        "date": "2025-06-10",
+        "count": 0
+      },
+      {
+        "date": "2025-06-11",
+        "count": 3
+      },
+      {
+        "date": "2025-06-12",
+        "count": 5
+      },
+      {
+        "date": "2025-06-13",
+        "count": 8
       }
     ],
-    "myzusDate": "05 juin",
-    "myzusTaux": 10.0,
-    "myzusColor": "#fee5d8"
+    "myzusDate": "13 juin",
+    "myzusTaux": 15.0,
+    "myzusColor": "#fed9c9"
   }
 ];
