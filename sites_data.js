@@ -206,6 +206,34 @@ const sites = [
       {
         "date": "2025-06-16",
         "count": 90
+      },
+      {
+        "date": "2025-06-17",
+        "count": 69
+      },
+      {
+        "date": "2025-06-18",
+        "count": 49
+      },
+      {
+        "date": "2025-06-19",
+        "count": 29
+      },
+      {
+        "date": "2025-06-20",
+        "count": 34
+      },
+      {
+        "date": "2025-06-21",
+        "count": 38
+      },
+      {
+        "date": "2025-06-22",
+        "count": 43
+      },
+      {
+        "date": "2025-06-23",
+        "count": 48
       }
     ],
     "myzusDate": null,
@@ -403,6 +431,18 @@ const sites = [
       {
         "date": "2025-06-16",
         "count": 54
+      },
+      {
+        "date": "2025-06-17",
+        "count": 86
+      },
+      {
+        "date": "2025-06-18",
+        "count": 119
+      },
+      {
+        "date": "2025-06-19",
+        "count": 151
       }
     ],
     "myzusDate": null,
@@ -978,11 +1018,19 @@ const sites = [
       {
         "date": "2025-06-16",
         "count": 11
+      },
+      {
+        "date": "2025-06-17",
+        "count": 8
+      },
+      {
+        "date": "2025-06-18",
+        "count": 6
       }
     ],
-    "myzusDate": "16 juin",
-    "myzusTaux": 5.0,
-    "myzusColor": "#ffede5"
+    "myzusDate": "18 juin",
+    "myzusTaux": 0.0,
+    "myzusColor": "#fff5f0"
   },
   {
     "name": "Ploeuc",
@@ -1095,55 +1143,55 @@ const sites = [
       },
       {
         "date": "2025-05-06",
-        "count": 0
+        "count": 11
       },
       {
         "date": "2025-05-07",
-        "count": 0
+        "count": 10
       },
       {
         "date": "2025-05-08",
-        "count": 0
+        "count": 10
       },
       {
         "date": "2025-05-09",
-        "count": 0
+        "count": 9
       },
       {
         "date": "2025-05-10",
-        "count": 0
+        "count": 8
       },
       {
         "date": "2025-05-11",
-        "count": 0
+        "count": 7
       },
       {
         "date": "2025-05-12",
-        "count": 1
+        "count": 7
       },
       {
         "date": "2025-05-13",
-        "count": 1
+        "count": 6
       },
       {
         "date": "2025-05-14",
-        "count": 1
+        "count": 5
       },
       {
         "date": "2025-05-15",
-        "count": 1
+        "count": 4
       },
       {
         "date": "2025-05-16",
-        "count": 1
+        "count": 4
       },
       {
         "date": "2025-05-17",
-        "count": 1
+        "count": 3
       },
       {
         "date": "2025-05-18",
-        "count": 1
+        "count": 2
       },
       {
         "date": "2025-05-19",
@@ -1211,7 +1259,7 @@ const sites = [
       },
       {
         "date": "2025-06-04",
-        "count": 2
+        "count": 1
       },
       {
         "date": "2025-06-05",
@@ -1219,11 +1267,11 @@ const sites = [
       },
       {
         "date": "2025-06-06",
-        "count": 1
+        "count": 0
       },
       {
         "date": "2025-06-07",
-        "count": 1
+        "count": 0
       },
       {
         "date": "2025-06-08",
@@ -1590,11 +1638,31 @@ const sites = [
       {
         "date": "2025-06-18",
         "count": 40
+      },
+      {
+        "date": "2025-06-19",
+        "count": 35
+      },
+      {
+        "date": "2025-06-20",
+        "count": 30
+      },
+      {
+        "date": "2025-06-21",
+        "count": 24
+      },
+      {
+        "date": "2025-06-22",
+        "count": 19
+      },
+      {
+        "date": "2025-06-23",
+        "count": 13
       }
     ],
-    "myzusDate": "18 juin",
-    "myzusTaux": 25.0,
-    "myzusColor": "#fcbba1"
+    "myzusDate": "23 juin",
+    "myzusTaux": 45.0,
+    "myzusColor": "#fb7a5a"
   },
   {
     "name": "Chateauneuf",
@@ -1763,9 +1831,37 @@ const sites = [
       {
         "date": "2025-06-13",
         "count": 171
+      },
+      {
+        "date": "2025-06-14",
+        "count": 139
+      },
+      {
+        "date": "2025-06-15",
+        "count": 108
+      },
+      {
+        "date": "2025-06-16",
+        "count": 77
+      },
+      {
+        "date": "2025-06-17",
+        "count": 46
+      },
+      {
+        "date": "2025-06-18",
+        "count": 46
+      },
+      {
+        "date": "2025-06-19",
+        "count": 46
+      },
+      {
+        "date": "2025-06-20",
+        "count": 47
       }
     ],
-    "myzusDate": "13 juin",
+    "myzusDate": "20 juin",
     "myzusTaux": 0.0,
     "myzusColor": "#fff5f0"
   },
@@ -1896,10 +1992,26 @@ const sites = [
       {
         "date": "2025-06-13",
         "count": 8
+      },
+      {
+        "date": "2025-06-14",
+        "count": 7
+      },
+      {
+        "date": "2025-06-15",
+        "count": 6
+      },
+      {
+        "date": "2025-06-16",
+        "count": 5
+      },
+      {
+        "date": "2025-06-17",
+        "count": 4
       }
     ],
-    "myzusDate": "13 juin",
-    "myzusTaux": 15.0,
-    "myzusColor": "#fed9c9"
+    "myzusDate": "17 juin",
+    "myzusTaux": 5.0,
+    "myzusColor": "#ffede5"
   }
 ];
