@@ -270,6 +270,14 @@ const sites = [
       {
         "date": "2025-07-02",
         "count": 4
+      },
+      {
+        "date": "2025-07-03",
+        "count": 6
+      },
+      {
+        "date": "2025-07-04",
+        "count": 8
       }
     ],
     "myzusDate": null,
@@ -523,6 +531,22 @@ const sites = [
       {
         "date": "2025-06-30",
         "count": 8
+      },
+      {
+        "date": "2025-07-01",
+        "count": 7
+      },
+      {
+        "date": "2025-07-02",
+        "count": 6
+      },
+      {
+        "date": "2025-07-03",
+        "count": 5
+      },
+      {
+        "date": "2025-07-04",
+        "count": 4
       }
     ],
     "myzusDate": null,
@@ -1507,27 +1531,27 @@ const sites = [
       },
       {
         "date": "2025-06-19",
-        "count": 4
+        "count": 9
       },
       {
         "date": "2025-06-20",
-        "count": 4
+        "count": 13
       },
       {
         "date": "2025-06-21",
-        "count": 3
+        "count": 11
       },
       {
         "date": "2025-06-22",
-        "count": 3
+        "count": 8
       },
       {
         "date": "2025-06-23",
-        "count": 3
+        "count": 6
       },
       {
         "date": "2025-06-24",
-        "count": 2
+        "count": 4
       }
     ],
     "myzusDate": "24 juin",
