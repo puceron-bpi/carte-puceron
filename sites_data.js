@@ -788,11 +788,39 @@ const sites = [
       {
         "date": "2025-06-23",
         "count": 14
+      },
+      {
+        "date": "2025-06-24",
+        "count": 12
+      },
+      {
+        "date": "2025-06-25",
+        "count": 10
+      },
+      {
+        "date": "2025-06-26",
+        "count": 9
+      },
+      {
+        "date": "2025-06-27",
+        "count": 8
+      },
+      {
+        "date": "2025-06-28",
+        "count": 8
+      },
+      {
+        "date": "2025-06-29",
+        "count": 8
+      },
+      {
+        "date": "2025-06-30",
+        "count": 7
       }
     ],
-    "myzusDate": "23 juin",
-    "myzusTaux": 5.0,
-    "myzusColor": "#ffede5"
+    "myzusDate": "30 juin",
+    "myzusTaux": 0.0,
+    "myzusColor": "#fff5f0"
   },
   {
     "name": "Plougar",
@@ -1238,9 +1266,25 @@ const sites = [
       {
         "date": "2025-06-27",
         "count": 1
+      },
+      {
+        "date": "2025-06-28",
+        "count": 1
+      },
+      {
+        "date": "2025-06-29",
+        "count": 1
+      },
+      {
+        "date": "2025-06-30",
+        "count": 0
+      },
+      {
+        "date": "2025-07-01",
+        "count": 0
       }
     ],
-    "myzusDate": "27 juin",
+    "myzusDate": "01 juillet",
     "myzusTaux": 0.0,
     "myzusColor": "#fff5f0"
   },
@@ -1769,9 +1813,37 @@ const sites = [
       {
         "date": "2025-06-26",
         "count": 1
+      },
+      {
+        "date": "2025-06-27",
+        "count": 1
+      },
+      {
+        "date": "2025-06-28",
+        "count": 1
+      },
+      {
+        "date": "2025-06-29",
+        "count": 1
+      },
+      {
+        "date": "2025-06-30",
+        "count": 1
+      },
+      {
+        "date": "2025-07-01",
+        "count": 0
+      },
+      {
+        "date": "2025-07-02",
+        "count": 0
+      },
+      {
+        "date": "2025-07-03",
+        "count": 0
       }
     ],
-    "myzusDate": "26 juin",
+    "myzusDate": "03 juillet",
     "myzusTaux": 0.0,
     "myzusColor": "#fff5f0"
   },
@@ -2436,9 +2508,25 @@ const sites = [
       {
         "date": "2025-06-27",
         "count": 0
+      },
+      {
+        "date": "2025-06-28",
+        "count": 0
+      },
+      {
+        "date": "2025-06-29",
+        "count": 1
+      },
+      {
+        "date": "2025-06-30",
+        "count": 1
+      },
+      {
+        "date": "2025-07-01",
+        "count": 1
       }
     ],
-    "myzusDate": "27 juin",
+    "myzusDate": "01 juillet",
     "myzusTaux": 0.0,
     "myzusColor": "#fff5f0"
   }
