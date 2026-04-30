@@ -25,6 +25,23 @@ const sites = [
     "myzusColor": "#ffffff"
   },
   {
+    "name": "Cléguérec",
+    "coords": [
+      48.1246,
+      -3.0694
+    ],
+    "color": "#377eb8",
+    "data": [
+      {
+        "date": "2026-04-27",
+        "count": 45
+      }
+    ],
+    "myzusDate": null,
+    "myzusTaux": null,
+    "myzusColor": "#ffffff"
+  },
+  {
     "name": "St caradec",
     "coords": [
       48.1913,
@@ -107,6 +124,18 @@ const sites = [
       {
         "date": "2026-04-27",
         "count": 10
+      },
+      {
+        "date": "2026-04-28",
+        "count": 11
+      },
+      {
+        "date": "2026-04-29",
+        "count": 12
+      },
+      {
+        "date": "2026-04-30",
+        "count": 13
       }
     ],
     "myzusDate": null,
