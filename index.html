@@ -5,160 +5,392 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Carte interactive des sites de collecte de pucerons</title>
 
-  <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
-    body { margin: 0; padding: 0; font-family: sans-serif; }
-    #map { width: 50%; height: 100vh; float: left; position: relative; }
-    #chart-container { width: 50%; height: 100vh; float: left; display: flex; flex-direction: column; }
-    #chart { flex: 1; }
-    #reset-button { padding: 10px; border: none; background-color: #333; color: white; cursor: pointer; font-size: 1rem; }
-    #reset-button:hover { background-color: #555; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    /* Légende */
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --surface2: #22263a;
+      --border: #2e3348;
+      --accent: #4ade80;
+      --accent2: #60a5fa;
+      --text: #e2e8f0;
+      --text-muted: #64748b;
+      --danger: #f87171;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'IBM Plex Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* ── MAP PANEL ── */
+    #map-panel {
+      width: 50%;
+      height: 100vh;
+      position: relative;
+      border-right: 1px solid var(--border);
+    }
+
+    #map {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Leaflet tile dark overlay */
+    .leaflet-tile { filter: brightness(0.85) saturate(0.7) hue-rotate(200deg); }
+
+    /* ── HEADER BADGE ── */
+    #header-badge {
+      position: absolute;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 7px 16px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      white-space: nowrap;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    }
+
+    /* ── LEGEND ── */
     #legend {
       position: absolute;
-      bottom: 20px;
-      left: 20px;
-      background-color: white;
-      border-radius: 8px;
-      padding: 10px 15px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      font-size: 0.95rem;
+      bottom: 16px;
+      left: 12px;
       z-index: 1000;
-      max-width: 300px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      max-width: 260px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
     }
 
     #legend h4 {
-      margin: 0 0 8px;
-      font-size: 1rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 10px;
     }
 
-    .legend-border, .legend-center {
-      display: inline-block;
-      width: 16px;
-      height: 16px;
-      margin-right: 8px;
-      vertical-align: middle;
+    .legend-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+
+    .legend-dot-outer {
+      width: 14px; height: 14px;
       border-radius: 50%;
+      border: 3px solid #e41a1c;
+      background: var(--surface);
+      flex-shrink: 0;
     }
 
-    .legend-border {
-      background: white;
-      border: 3px solid #e41a1c; /* exemple */
-    }
-
-    .legend-center {
+    .legend-dot-inner {
+      width: 14px; height: 14px;
+      border-radius: 50%;
       background: #e41a1c;
-      border: 2px solid black;
+      border: 2px solid rgba(255,255,255,0.3);
+      flex-shrink: 0;
     }
 
     .legend-note {
-      font-size: 0.85em;
-      color: #555;
       margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+      font-size: 0.72rem;
+      line-height: 1.5;
+      color: var(--text-muted);
+    }
+
+    /* ── CHART PANEL ── */
+    #chart-panel {
+      width: 50%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: var(--bg);
+    }
+
+    #chart-header {
+      padding: 14px 20px 10px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+
+    #chart-title {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    #chart-title span {
+      color: var(--accent2);
+    }
+
+    #reset-button {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border: 1px solid var(--border);
+      background: var(--surface2);
+      color: var(--text);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    #reset-button:hover {
+      border-color: var(--accent2);
+      color: var(--accent2);
+      background: rgba(96,165,250,0.08);
+    }
+
+    #chart {
+      flex: 1;
+      min-height: 0;
+    }
+
+    /* ── SITE COUNT BADGE ── */
+    #site-count {
+      position: absolute;
+      top: 14px;
+      right: 12px;
+      z-index: 1000;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 4px 10px;
+    }
+
+    #site-count span { color: var(--accent); font-weight: 600; }
+
+    /* Leaflet tooltip custom */
+    .leaflet-tooltip {
+      background: var(--surface) !important;
+      border: 1px solid var(--border) !important;
+      color: var(--text) !important;
+      font-family: 'IBM Plex Sans', sans-serif !important;
+      font-size: 0.8rem !important;
+      border-radius: 6px !important;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.4) !important;
+      padding: 8px 12px !important;
+    }
+
+    .leaflet-tooltip-top::before { border-top-color: var(--border) !important; }
+
+    .tt-name {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 600;
+      font-size: 0.85rem;
+      margin-bottom: 4px;
+    }
+
+    .tt-row { color: var(--text-muted); font-size: 0.75rem; margin-top: 2px; }
+    .tt-row span { color: var(--text); }
+
+    /* Pulse animation for active markers */
+    @keyframes pulse-ring {
+      0% { transform: scale(1); opacity: 0.6; }
+      100% { transform: scale(2.2); opacity: 0; }
     }
   </style>
 </head>
 <body>
-  <div id="map">
+
+  <div id="map-panel">
+    <div id="header-badge">🌿 Suivi pucerons 2026</div>
+    <div id="map"></div>
+    <div id="site-count">Sites actifs : <span id="active-count">—</span></div>
     <div id="legend">
       <h4>Légende</h4>
-      <p><span class="legend-border"></span> Couleur du site (correspond à la courbe)</p>
-      <p><span class="legend-center"></span> Centre coloré : taux estimé de <em>Myzus</em> (%)</p>
-      <p style="font-size: 0.9em; margin-top: 8px;">Survolez un point pour voir la date et le taux</p>
-      <p class="legend-note">⚠️ Le taux de <em>Myzus</em> est estimé sur un échantillon de 20 pucerons capturés par site.</p>
+      <div class="legend-row">
+        <div class="legend-dot-outer"></div>
+        <span>Couleur du site (correspond à la courbe)</span>
+      </div>
+      <div class="legend-row">
+        <div class="legend-dot-inner"></div>
+        <span>Centre : taux estimé de <em>Myzus</em> (%)</span>
+      </div>
+      <div class="legend-row" style="margin-top:6px; color: var(--text-muted); font-size:0.73rem;">
+        💬 Survolez un point pour les détails
+      </div>
+      <div class="legend-note">
+        ⚠️ Taux <em>Myzus</em> estimé sur un échantillon de 20 pucerons capturés par site.
+      </div>
     </div>
   </div>
 
-  <div id="chart-container">
+  <div id="chart-panel">
+    <div id="chart-header">
+      <div id="chart-title">Pucerons capturés · <span>par jour / par site</span></div>
+      <button id="reset-button" onclick="resetZoom()">↔ Tout afficher</button>
+    </div>
     <div id="chart"></div>
-    <button id="reset-button" onclick="resetZoom()">Afficher toutes les données</button>
   </div>
 
-  <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <!-- Plotly JS -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <!-- Données -->
   <script src="sites_data.js"></script>
   <script src="https://cdn.plot.ly/plotly-locale-fr-latest.js"></script>
 
-
   <script>
-    const map = L.map('map').setView([48.0, -3.5], 8);
+    // ── Filtre les sites avec données ──
+    const sitesActifs = sites.filter(s => s.data && s.data.length > 0);
+    document.getElementById('active-count').textContent = sitesActifs.length;
+
+    // ── Carte ──
+    const map = L.map('map', { zoomControl: true }).setView([48.2, -3.5], 8);
+
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
-    sites.forEach((site, idx) => {
+    sitesActifs.forEach((site, idx) => {
       const marker = L.circleMarker(site.coords, {
         color: site.color,
-        radius: 8,
-        fillOpacity: 0.8,
-        fillColor: site.myzusColor || 'white'
+        weight: 2.5,
+        radius: 9,
+        fillOpacity: 0.85,
+        fillColor: site.myzusColor || '#ffffff'
       }).addTo(map);
 
-      if (site.myzusDate && site.myzusTaux !== undefined) {
-        marker.bindTooltip(`<strong>${site.name}</strong><br>Date : ${site.myzusDate}<br>Taux Myzus : ${site.myzusTaux}%`);
+      // Tooltip HTML
+      let ttContent = `<div class="tt-name" style="color:${site.color}">${site.name}</div>`;
+      if (site.myzusDate && site.myzusTaux !== null) {
+        ttContent += `<div class="tt-row">Date Myzus : <span>${site.myzusDate}</span></div>`;
+        ttContent += `<div class="tt-row">Taux Myzus : <span>${site.myzusTaux}%</span></div>`;
       } else {
-        marker.bindTooltip(`<strong>${site.name}</strong><br>Aucune donnée Myzus récente`);
+        ttContent += `<div class="tt-row" style="color:#64748b">Aucune donnée Myzus</div>`;
       }
+      const lastData = site.data[site.data.length - 1];
+      if (lastData) {
+        ttContent += `<div class="tt-row">Dernière capture : <span>${lastData.count} pucerons</span></div>`;
+        ttContent += `<div class="tt-row">Date : <span>${lastData.date}</span></div>`;
+      }
+
+      marker.bindTooltip(ttContent, { direction: 'top', offset: [0, -10] });
 
       marker.on('mouseover', () => highlightTrace(idx));
       marker.on('mouseout', () => resetTraces());
     });
 
-    const traces = sites.map(site => ({
+    // ── Graphique ──
+    const traces = sitesActifs.map(site => ({
       x: site.data.map(d => d.date),
       y: site.data.map(d => d.count),
       name: site.name,
-      mode: 'lines+markers',
+      mode: site.data.length === 1 ? 'markers' : 'lines+markers',
       line: { color: site.color, width: 2 },
-      marker: { size: 6 }
+      marker: {
+        size: site.data.length === 1 ? 10 : 5,
+        color: site.color
+      }
     }));
 
-    const allDates = sites.flatMap(site => site.data.map(d => new Date(d.date)));
+    const allDates = sitesActifs.flatMap(s => s.data.map(d => new Date(d.date)));
     const maxDate = new Date(Math.max(...allDates));
     const minDate = new Date(Math.min(...allDates));
-    const initialStartDate = new Date(maxDate);
-    initialStartDate.setDate(maxDate.getDate() - 7);
+    const initialStart = new Date(maxDate);
+    initialStart.setDate(maxDate.getDate() - 7);
+
     Plotly.setPlotConfig({ locale: 'fr' });
-    Plotly.newPlot('chart', traces, {
-      title: 'Nombre de pucerons capturés par jour',
+
+    const layout = {
+      paper_bgcolor: '#0f1117',
+      plot_bgcolor: '#0f1117',
+      font: { family: 'IBM Plex Sans, sans-serif', color: '#94a3b8', size: 11 },
+      margin: { t: 20, r: 20, b: 60, l: 55 },
+      legend: {
+        bgcolor: '#1a1d27',
+        bordercolor: '#2e3348',
+        borderwidth: 1,
+        font: { size: 10 }
+      },
       xaxis: {
-        title: 'Date',
+        title: { text: 'Date', font: { size: 11 } },
         type: 'date',
-        range: [initialStartDate.toISOString(), maxDate.toISOString()],
-        rangeslider: { visible: true, yaxis: { visible: false } }
+        range: [initialStart.toISOString(), maxDate.toISOString()],
+        gridcolor: '#1e2333',
+        linecolor: '#2e3348',
+        tickcolor: '#2e3348',
+        rangeslider: {
+          visible: true,
+          bgcolor: '#1a1d27',
+          bordercolor: '#2e3348',
+          thickness: 0.06
+        }
       },
       yaxis: {
-        title: 'Nombre de pucerons',
-        autorange: true
+        title: { text: 'Nb pucerons', font: { size: 11 } },
+        autorange: true,
+        gridcolor: '#1e2333',
+        linecolor: '#2e3348',
+        tickcolor: '#2e3348',
+        zeroline: false
       }
-    });
+    };
 
+    Plotly.newPlot('chart', traces, layout, { responsive: true, displayModeBar: false });
+
+    // ── Zoom reset ──
     function resetZoom() {
       Plotly.relayout('chart', {
         'xaxis.range': [minDate.toISOString(), maxDate.toISOString()]
       });
     }
 
+    // ── Highlight depuis la carte ──
     function highlightTrace(index) {
-      const update = {
-        'line.width': sites.map((_, i) => i === index ? 4 : 1),
-        'opacity': sites.map((_, i) => i === index ? 1 : 0.2)
-      };
-      Plotly.restyle('chart', update);
+      Plotly.restyle('chart', {
+        'line.width': sitesActifs.map((_, i) => i === index ? 4 : 1),
+        'opacity': sitesActifs.map((_, i) => i === index ? 1 : 0.15),
+        'marker.size': sitesActifs.map((s, i) => i === index ? 9 : (s.data.length === 1 ? 6 : 4))
+      });
     }
 
     function resetTraces() {
-      const update = {
-        'line.width': sites.map(() => 2),
-        'opacity': sites.map(() => 1)
-      };
-      Plotly.restyle('chart', update);
+      Plotly.restyle('chart', {
+        'line.width': sitesActifs.map(() => 2),
+        'opacity': sitesActifs.map(() => 1),
+        'marker.size': sitesActifs.map(s => s.data.length === 1 ? 10 : 5)
+      });
     }
   </script>
 </body>
