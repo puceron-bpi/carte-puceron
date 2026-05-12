@@ -410,15 +410,89 @@ const sites = [
     "myzusColor": "#ffffff"
   },
   {
-    "name": "Chateauneuf du faou",
+    "name": "Ploudalmézeau",
     "coords": [
-      48.1876,
-      -3.8179
+      48.544,
+      -4.657
     ],
     "color": "#a65628",
     "data": [
       {
+        "date": "2026-04-27",
+        "count": 11
+      },
+      {
+        "date": "2026-04-28",
+        "count": 11
+      },
+      {
+        "date": "2026-04-29",
+        "count": 11
+      },
+      {
+        "date": "2026-04-30",
+        "count": 11
+      },
+      {
+        "date": "2026-05-01",
+        "count": 10
+      },
+      {
+        "date": "2026-05-02",
+        "count": 10
+      },
+      {
+        "date": "2026-05-03",
+        "count": 9
+      },
+      {
+        "date": "2026-05-04",
+        "count": 9
+      },
+      {
+        "date": "2026-05-05",
+        "count": 7
+      },
+      {
+        "date": "2026-05-06",
+        "count": 5
+      },
+      {
         "date": "2026-05-07",
+        "count": 3
+      }
+    ],
+    "myzusDate": null,
+    "myzusTaux": null,
+    "myzusColor": "#ffffff"
+  },
+  {
+    "name": "Châteauneuf-du-Faou",
+    "coords": [
+      48.1876,
+      -3.8179
+    ],
+    "color": "#f781bf",
+    "data": [
+      {
+        "date": "2026-05-07",
+        "count": 0
+      }
+    ],
+    "myzusDate": null,
+    "myzusTaux": null,
+    "myzusColor": "#ffffff"
+  },
+  {
+    "name": "Plounévez-Lochrist",
+    "coords": [
+      48.617,
+      -4.212
+    ],
+    "color": "#999999",
+    "data": [
+      {
+        "date": "2026-05-11",
         "count": 0
       }
     ],
