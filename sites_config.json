@@ -9,8 +9,10 @@
     "St Gilles les bois": [48.6527, -3.1054],
     "Guiclan":            [48.5511, -3.9623],
     "Hanvec":             [48.3275, -4.1586],
-    "Chateauneuf":        [48.1876, -3.8179],
+    "Châteauneuf-du-Faou":[48.1876, -3.8179],
     "Plogonnec":          [48.0781, -4.1916],
-    "St Guen":            [48.2167, -2.9333]
+    "St Guen":            [48.2167, -2.9333],
+    "Plounévez-Lochrist": [48.6170, -4.2120],
+    "Ploudalmézeau":      [48.5440, -4.6570]
   }
 }
