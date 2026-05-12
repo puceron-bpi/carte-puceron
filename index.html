@@ -136,13 +136,20 @@
     });
 
     const traces = sitesActifs.map(site => ({
-      x: site.data.map(d => d.date),
-      y: site.data.map(d => d.count),
-      name: site.name,
-      mode: site.data.length === 1 ? 'markers' : 'lines+markers',
-      line: { color: site.color, width: 2 },
-      marker: { size: site.data.length === 1 ? 10 : 6, color: site.color }
-    }));
+  x: site.data.map(d => d.date),
+  y: site.data.map(d => Number(d.count)),
+  name: site.name,
+  mode: site.data.length === 1 ? 'markers' : 'lines+markers',
+  connectgaps: true,
+  line: {
+    color: site.color,
+    width: 2
+  },
+  marker: {
+    size: site.data.length === 1 ? 10 : 6,
+    color: site.color
+  }
+}));
 
     const allDates = sitesActifs.flatMap(site => site.data.map(d => new Date(d.date)));
     const maxDate = new Date(Math.max(...allDates));
