@@ -50,6 +50,34 @@ const sites = [
       {
         "date": "2026-05-04",
         "count": 43
+      },
+      {
+        "date": "2026-05-05",
+        "count": 34
+      },
+      {
+        "date": "2026-05-06",
+        "count": 26
+      },
+      {
+        "date": "2026-05-07",
+        "count": 18
+      },
+      {
+        "date": "2026-05-08",
+        "count": 17
+      },
+      {
+        "date": "2026-05-09",
+        "count": 16
+      },
+      {
+        "date": "2026-05-10",
+        "count": 16
+      },
+      {
+        "date": "2026-05-11",
+        "count": 15
       }
     ],
     "myzusDate": null,
@@ -119,6 +147,34 @@ const sites = [
       {
         "date": "2026-05-04",
         "count": 61
+      },
+      {
+        "date": "2026-05-05",
+        "count": 56
+      },
+      {
+        "date": "2026-05-06",
+        "count": 50
+      },
+      {
+        "date": "2026-05-07",
+        "count": 45
+      },
+      {
+        "date": "2026-05-08",
+        "count": 42
+      },
+      {
+        "date": "2026-05-09",
+        "count": 39
+      },
+      {
+        "date": "2026-05-10",
+        "count": 36
+      },
+      {
+        "date": "2026-05-11",
+        "count": 32
       }
     ],
     "myzusDate": null,
@@ -164,6 +220,18 @@ const sites = [
       {
         "date": "2026-05-04",
         "count": 360
+      },
+      {
+        "date": "2026-05-05",
+        "count": 269
+      },
+      {
+        "date": "2026-05-06",
+        "count": 178
+      },
+      {
+        "date": "2026-05-07",
+        "count": 87
       }
     ],
     "myzusDate": null,
@@ -209,6 +277,59 @@ const sites = [
       {
         "date": "2026-05-04",
         "count": 70
+      },
+      {
+        "date": "2026-05-05",
+        "count": 56
+      },
+      {
+        "date": "2026-05-06",
+        "count": 41
+      },
+      {
+        "date": "2026-05-07",
+        "count": 27
+      }
+    ],
+    "myzusDate": null,
+    "myzusTaux": null,
+    "myzusColor": "#ffffff"
+  },
+  {
+    "name": "St Guen",
+    "coords": [
+      48.2167,
+      -2.9333
+    ],
+    "color": "#ff7f00",
+    "data": [
+      {
+        "date": "2026-04-28",
+        "count": 36
+      },
+      {
+        "date": "2026-04-29",
+        "count": 36
+      },
+      {
+        "date": "2026-04-30",
+        "count": 36
+      },
+      {
+        "date": "2026-05-01",
+        "count": 27
+      },
+      {
+        "date": "2026-05-02",
+        "count": 18
+      },
+      {
+        "date": "2026-05-03",
+        "count": 9
+      },
+      {
+        "date": "2026-05-04",
+        "count": 0
       }
     ],
     "myzusDate": null,
@@ -254,6 +375,51 @@ const sites = [
       {
         "date": "2026-05-04",
         "count": 48
+      },
+      {
+        "date": "2026-05-05",
+        "count": 37
+      },
+      {
+        "date": "2026-05-06",
+        "count": 26
+      },
+      {
+        "date": "2026-05-07",
+        "count": 16
+      },
+      {
+        "date": "2026-05-08",
+        "count": 17
+      },
+      {
+        "date": "2026-05-09",
+        "count": 18
+      },
+      {
+        "date": "2026-05-10",
+        "count": 20
+      },
+      {
+        "date": "2026-05-11",
+        "count": 21
+      }
+    ],
+    "myzusDate": null,
+    "myzusTaux": null,
+    "myzusColor": "#ffffff"
+  },
+  {
+    "name": "Chateauneuf du faou",
+    "coords": [
+      48.1876,
+      -3.8179
+    ],
+    "color": "#a65628",
+    "data": [
+      {
+        "date": "2026-05-07",
+        "count": 0
       }
     ],
     "myzusDate": null,
