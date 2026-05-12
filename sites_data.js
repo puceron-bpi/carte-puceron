@@ -330,6 +330,18 @@ const sites = [
       {
         "date": "2026-05-04",
         "count": 0
+      },
+      {
+        "date": "2026-05-05",
+        "count": 32
+      },
+      {
+        "date": "2026-05-06",
+        "count": 64
+      },
+      {
+        "date": "2026-05-07",
+        "count": 97
       }
     ],
     "myzusDate": null,
