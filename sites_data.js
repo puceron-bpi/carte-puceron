@@ -612,7 +612,7 @@ const sites = [
     ],
     "myzusDate": "13 mai",
     "myzusTaux": 10.0,
-    "myzusColor": "#fee5d8"
+    "myzusColor": "#fb694a"
   },
   {
     "name": "Châteauneuf-du-Faou",
@@ -695,6 +695,6 @@ const sites = [
     ],
     "myzusDate": "11 mai",
     "myzusTaux": 5.0,
-    "myzusColor": "#ffede5"
+    "myzusColor": "#fc9b7c"
   }
 ];
