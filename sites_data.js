@@ -745,31 +745,31 @@ const sites = [
       },
       {
         "date": "2026-05-12",
-        "count": 0
+        "count": 2
       },
       {
         "date": "2026-05-13",
-        "count": 1
+        "count": 3
       },
       {
         "date": "2026-05-14",
-        "count": 1
+        "count": 5
       },
       {
         "date": "2026-05-15",
-        "count": 1
+        "count": 6
       },
       {
         "date": "2026-05-16",
-        "count": -2
+        "count": 5
       },
       {
         "date": "2026-05-17",
-        "count": -5
+        "count": 4
       },
       {
         "date": "2026-05-18",
-        "count": -8
+        "count": 3
       }
     ],
     "myzusDate": "15 mai",
