@@ -94,11 +94,35 @@ const sites = [
       {
         "date": "2026-05-15",
         "count": 6
+      },
+      {
+        "date": "2026-05-16",
+        "count": 7
+      },
+      {
+        "date": "2026-05-17",
+        "count": 7
+      },
+      {
+        "date": "2026-05-18",
+        "count": 7
+      },
+      {
+        "date": "2026-05-19",
+        "count": 7
+      },
+      {
+        "date": "2026-05-20",
+        "count": 7
+      },
+      {
+        "date": "2026-05-21",
+        "count": 8
       }
     ],
-    "myzusDate": "18 mai",
-    "myzusTaux": 15.0,
-    "myzusColor": "#f34935"
+    "myzusDate": "21 mai",
+    "myzusTaux": 0.0,
+    "myzusColor": "#fff5f0"
   },
   {
     "name": "Bieuzy",
@@ -639,19 +663,19 @@ const sites = [
       },
       {
         "date": "2026-05-08",
-        "count": -2
+        "count": 2
       },
       {
         "date": "2026-05-09",
-        "count": -7
+        "count": 2
       },
       {
         "date": "2026-05-10",
-        "count": -12
+        "count": 2
       },
       {
         "date": "2026-05-11",
-        "count": -17
+        "count": 2
       },
       {
         "date": "2026-05-12",
@@ -659,7 +683,7 @@ const sites = [
       },
       {
         "date": "2026-05-13",
-        "count": 2
+        "count": -17
       }
     ],
     "myzusDate": "13 mai",
@@ -721,31 +745,31 @@ const sites = [
       },
       {
         "date": "2026-05-12",
-        "count": -2
+        "count": 0
       },
       {
         "date": "2026-05-13",
-        "count": -4
+        "count": 1
       },
       {
         "date": "2026-05-14",
-        "count": -6
+        "count": 1
       },
       {
         "date": "2026-05-15",
-        "count": -8
+        "count": 1
       },
       {
         "date": "2026-05-16",
-        "count": -5
-      },
-      {
-        "date": "2026-05-17",
         "count": -2
       },
       {
+        "date": "2026-05-17",
+        "count": -5
+      },
+      {
         "date": "2026-05-18",
-        "count": 1
+        "count": -8
       }
     ],
     "myzusDate": "15 mai",
