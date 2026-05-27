@@ -118,11 +118,31 @@ const sites = [
       {
         "date": "2026-05-21",
         "count": 8
+      },
+      {
+        "date": "2026-05-22",
+        "count": 9
+      },
+      {
+        "date": "2026-05-23",
+        "count": 9
+      },
+      {
+        "date": "2026-05-24",
+        "count": 10
+      },
+      {
+        "date": "2026-05-25",
+        "count": 11
+      },
+      {
+        "date": "2026-05-26",
+        "count": 12
       }
     ],
-    "myzusDate": "21 mai",
-    "myzusTaux": 0.0,
-    "myzusColor": "#fff5f0"
+    "myzusDate": "26 mai",
+    "myzusTaux": 5.0,
+    "myzusColor": "#fc9b7c"
   },
   {
     "name": "Bieuzy",
@@ -243,6 +263,38 @@ const sites = [
       {
         "date": "2026-05-18",
         "count": 6
+      },
+      {
+        "date": "2026-05-19",
+        "count": 8
+      },
+      {
+        "date": "2026-05-20",
+        "count": 10
+      },
+      {
+        "date": "2026-05-21",
+        "count": 12
+      },
+      {
+        "date": "2026-05-22",
+        "count": 13
+      },
+      {
+        "date": "2026-05-23",
+        "count": 15
+      },
+      {
+        "date": "2026-05-24",
+        "count": 16
+      },
+      {
+        "date": "2026-05-25",
+        "count": 18
+      },
+      {
+        "date": "2026-05-26",
+        "count": 19
       }
     ],
     "myzusDate": null,
@@ -344,6 +396,38 @@ const sites = [
       {
         "date": "2026-05-18",
         "count": 13
+      },
+      {
+        "date": "2026-05-19",
+        "count": 43
+      },
+      {
+        "date": "2026-05-20",
+        "count": 74
+      },
+      {
+        "date": "2026-05-21",
+        "count": 67
+      },
+      {
+        "date": "2026-05-22",
+        "count": 60
+      },
+      {
+        "date": "2026-05-23",
+        "count": 53
+      },
+      {
+        "date": "2026-05-24",
+        "count": 46
+      },
+      {
+        "date": "2026-05-25",
+        "count": 39
+      },
+      {
+        "date": "2026-05-26",
+        "count": 32
       }
     ],
     "myzusDate": null,
@@ -425,11 +509,31 @@ const sites = [
       {
         "date": "2026-05-13",
         "count": -97
+      },
+      {
+        "date": "2026-05-14",
+        "count": -77
+      },
+      {
+        "date": "2026-05-15",
+        "count": -58
+      },
+      {
+        "date": "2026-05-16",
+        "count": -38
+      },
+      {
+        "date": "2026-05-17",
+        "count": -18
+      },
+      {
+        "date": "2026-05-18",
+        "count": 1
       }
     ],
-    "myzusDate": "11 mai",
-    "myzusTaux": 20.0,
-    "myzusColor": "#e83429"
+    "myzusDate": "18 mai",
+    "myzusTaux": 5.0,
+    "myzusColor": "#fc9b7c"
   },
   {
     "name": "St Guen",
@@ -502,11 +606,43 @@ const sites = [
       {
         "date": "2026-05-13",
         "count": 6
+      },
+      {
+        "date": "2026-05-14",
+        "count": 5
+      },
+      {
+        "date": "2026-05-15",
+        "count": 4
+      },
+      {
+        "date": "2026-05-16",
+        "count": 3
+      },
+      {
+        "date": "2026-05-17",
+        "count": 3
+      },
+      {
+        "date": "2026-05-18",
+        "count": 2
+      },
+      {
+        "date": "2026-05-19",
+        "count": 4
+      },
+      {
+        "date": "2026-05-20",
+        "count": 5
+      },
+      {
+        "date": "2026-05-21",
+        "count": 7
       }
     ],
-    "myzusDate": null,
-    "myzusTaux": null,
-    "myzusColor": "#ffffff"
+    "myzusDate": "21 mai",
+    "myzusTaux": 25.0,
+    "myzusColor": "#da2723"
   },
   {
     "name": "Guiclan",
@@ -684,11 +820,31 @@ const sites = [
       {
         "date": "2026-05-13",
         "count": -17
+      },
+      {
+        "date": "2026-05-14",
+        "count": -13
+      },
+      {
+        "date": "2026-05-15",
+        "count": -9
+      },
+      {
+        "date": "2026-05-16",
+        "count": -5
+      },
+      {
+        "date": "2026-05-17",
+        "count": -1
+      },
+      {
+        "date": "2026-05-18",
+        "count": 3
       }
     ],
-    "myzusDate": "13 mai",
-    "myzusTaux": 10.0,
-    "myzusColor": "#fb694a"
+    "myzusDate": "18 mai",
+    "myzusTaux": 5.0,
+    "myzusColor": "#fc9b7c"
   },
   {
     "name": "Châteauneuf-du-Faou",
@@ -725,11 +881,31 @@ const sites = [
       {
         "date": "2026-05-13",
         "count": 15
+      },
+      {
+        "date": "2026-05-14",
+        "count": 16
+      },
+      {
+        "date": "2026-05-15",
+        "count": 16
+      },
+      {
+        "date": "2026-05-16",
+        "count": 17
+      },
+      {
+        "date": "2026-05-17",
+        "count": 18
+      },
+      {
+        "date": "2026-05-18",
+        "count": 19
       }
     ],
-    "myzusDate": null,
-    "myzusTaux": null,
-    "myzusColor": "#ffffff"
+    "myzusDate": "18 mai",
+    "myzusTaux": 5.0,
+    "myzusColor": "#fc9b7c"
   },
   {
     "name": "Plounévez-Lochrist",
@@ -770,9 +946,21 @@ const sites = [
       {
         "date": "2026-05-18",
         "count": 3
+      },
+      {
+        "date": "2026-05-19",
+        "count": 4
+      },
+      {
+        "date": "2026-05-20",
+        "count": 5
+      },
+      {
+        "date": "2026-05-21",
+        "count": 5
       }
     ],
-    "myzusDate": "15 mai",
+    "myzusDate": "21 mai",
     "myzusTaux": 0.0,
     "myzusColor": "#fff5f0"
   },
@@ -803,10 +991,38 @@ const sites = [
       {
         "date": "2026-05-11",
         "count": 113
+      },
+      {
+        "date": "2026-05-12",
+        "count": 79
+      },
+      {
+        "date": "2026-05-13",
+        "count": 46
+      },
+      {
+        "date": "2026-05-14",
+        "count": 12
+      },
+      {
+        "date": "2026-05-15",
+        "count": 11
+      },
+      {
+        "date": "2026-05-16",
+        "count": 10
+      },
+      {
+        "date": "2026-05-17",
+        "count": 9
+      },
+      {
+        "date": "2026-05-18",
+        "count": 8
       }
     ],
-    "myzusDate": "11 mai",
-    "myzusTaux": 5.0,
-    "myzusColor": "#fc9b7c"
+    "myzusDate": "18 mai",
+    "myzusTaux": 10.0,
+    "myzusColor": "#fb694a"
   }
 ];
