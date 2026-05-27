@@ -97,19 +97,19 @@ const sites = [
       },
       {
         "date": "2026-05-16",
-        "count": 7
+        "count": 6
       },
       {
         "date": "2026-05-17",
-        "count": 7
+        "count": 6
       },
       {
         "date": "2026-05-18",
-        "count": 7
+        "count": 6
       },
       {
         "date": "2026-05-19",
-        "count": 7
+        "count": 6
       },
       {
         "date": "2026-05-20",
@@ -488,47 +488,47 @@ const sites = [
       },
       {
         "date": "2026-05-08",
-        "count": 20
+        "count": 32
       },
       {
         "date": "2026-05-09",
-        "count": 14
+        "count": 38
       },
       {
         "date": "2026-05-10",
-        "count": 8
+        "count": 43
       },
       {
         "date": "2026-05-11",
-        "count": 1
+        "count": 48
       },
       {
         "date": "2026-05-12",
-        "count": -48
+        "count": 26
       },
       {
         "date": "2026-05-13",
-        "count": -97
+        "count": 3
       },
       {
         "date": "2026-05-14",
-        "count": -77
+        "count": 3
       },
       {
         "date": "2026-05-15",
-        "count": -58
+        "count": 2
       },
       {
         "date": "2026-05-16",
-        "count": -38
+        "count": 2
       },
       {
         "date": "2026-05-17",
-        "count": -18
+        "count": 2
       },
       {
         "date": "2026-05-18",
-        "count": 1
+        "count": 2
       }
     ],
     "myzusDate": "18 mai",
@@ -799,47 +799,47 @@ const sites = [
       },
       {
         "date": "2026-05-08",
-        "count": 2
+        "count": 4
       },
       {
         "date": "2026-05-09",
-        "count": 2
+        "count": 6
       },
       {
         "date": "2026-05-10",
-        "count": 2
+        "count": 7
       },
       {
         "date": "2026-05-11",
-        "count": 2
+        "count": 8
       },
       {
         "date": "2026-05-12",
-        "count": -8
+        "count": 7
       },
       {
         "date": "2026-05-13",
-        "count": -17
+        "count": 6
       },
       {
         "date": "2026-05-14",
-        "count": -13
+        "count": 6
       },
       {
         "date": "2026-05-15",
-        "count": -9
+        "count": 5
       },
       {
         "date": "2026-05-16",
-        "count": -5
+        "count": 5
       },
       {
         "date": "2026-05-17",
-        "count": -1
+        "count": 5
       },
       {
         "date": "2026-05-18",
-        "count": 3
+        "count": 4
       }
     ],
     "myzusDate": "18 mai",
