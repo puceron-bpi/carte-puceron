@@ -529,11 +529,23 @@ const sites = [
       {
         "date": "2026-05-18",
         "count": 2
+      },
+      {
+        "date": "2026-05-19",
+        "count": 2
+      },
+      {
+        "date": "2026-05-20",
+        "count": 3
+      },
+      {
+        "date": "2026-05-21",
+        "count": 3
       }
     ],
-    "myzusDate": "18 mai",
-    "myzusTaux": 5.0,
-    "myzusColor": "#fc9b7c"
+    "myzusDate": "21 mai",
+    "myzusTaux": 0.0,
+    "myzusColor": "#fff5f0"
   },
   {
     "name": "St Guen",
@@ -840,11 +852,23 @@ const sites = [
       {
         "date": "2026-05-18",
         "count": 4
+      },
+      {
+        "date": "2026-05-19",
+        "count": 5
+      },
+      {
+        "date": "2026-05-20",
+        "count": 6
+      },
+      {
+        "date": "2026-05-21",
+        "count": 7
       }
     ],
-    "myzusDate": "18 mai",
-    "myzusTaux": 5.0,
-    "myzusColor": "#fc9b7c"
+    "myzusDate": "21 mai",
+    "myzusTaux": 0.0,
+    "myzusColor": "#fff5f0"
   },
   {
     "name": "Châteauneuf-du-Faou",
