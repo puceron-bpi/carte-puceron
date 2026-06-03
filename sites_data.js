@@ -138,11 +138,35 @@ const sites = [
       {
         "date": "2026-05-26",
         "count": 12
+      },
+      {
+        "date": "2026-05-27",
+        "count": 11
+      },
+      {
+        "date": "2026-05-28",
+        "count": 10
+      },
+      {
+        "date": "2026-05-29",
+        "count": 8
+      },
+      {
+        "date": "2026-05-30",
+        "count": 7
+      },
+      {
+        "date": "2026-05-31",
+        "count": 6
+      },
+      {
+        "date": "2026-06-01",
+        "count": 4
       }
     ],
-    "myzusDate": "26 mai",
-    "myzusTaux": 5.0,
-    "myzusColor": "#fc9b7c"
+    "myzusDate": "01 juin",
+    "myzusTaux": 0.0,
+    "myzusColor": "#fff5f0"
   },
   {
     "name": "Bieuzy",
@@ -295,6 +319,30 @@ const sites = [
       {
         "date": "2026-05-26",
         "count": 19
+      },
+      {
+        "date": "2026-05-27",
+        "count": 53
+      },
+      {
+        "date": "2026-05-28",
+        "count": 86
+      },
+      {
+        "date": "2026-05-29",
+        "count": 76
+      },
+      {
+        "date": "2026-05-30",
+        "count": 66
+      },
+      {
+        "date": "2026-05-31",
+        "count": 55
+      },
+      {
+        "date": "2026-06-01",
+        "count": 45
       }
     ],
     "myzusDate": null,
@@ -428,6 +476,30 @@ const sites = [
       {
         "date": "2026-05-26",
         "count": 32
+      },
+      {
+        "date": "2026-05-27",
+        "count": 38
+      },
+      {
+        "date": "2026-05-28",
+        "count": 43
+      },
+      {
+        "date": "2026-05-29",
+        "count": 40
+      },
+      {
+        "date": "2026-05-30",
+        "count": 37
+      },
+      {
+        "date": "2026-05-31",
+        "count": 34
+      },
+      {
+        "date": "2026-06-01",
+        "count": 32
       }
     ],
     "myzusDate": null,
@@ -541,11 +613,39 @@ const sites = [
       {
         "date": "2026-05-21",
         "count": 3
+      },
+      {
+        "date": "2026-05-22",
+        "count": 9
+      },
+      {
+        "date": "2026-05-23",
+        "count": 14
+      },
+      {
+        "date": "2026-05-24",
+        "count": 20
+      },
+      {
+        "date": "2026-05-25",
+        "count": 26
+      },
+      {
+        "date": "2026-05-26",
+        "count": 31
+      },
+      {
+        "date": "2026-05-27",
+        "count": 21
+      },
+      {
+        "date": "2026-05-28",
+        "count": 10
       }
     ],
-    "myzusDate": "21 mai",
-    "myzusTaux": 0.0,
-    "myzusColor": "#fff5f0"
+    "myzusDate": "28 mai",
+    "myzusTaux": 10.0,
+    "myzusColor": "#fb694a"
   },
   {
     "name": "St Guen",
@@ -650,11 +750,31 @@ const sites = [
       {
         "date": "2026-05-21",
         "count": 7
+      },
+      {
+        "date": "2026-05-22",
+        "count": 12
+      },
+      {
+        "date": "2026-05-23",
+        "count": 17
+      },
+      {
+        "date": "2026-05-24",
+        "count": 22
+      },
+      {
+        "date": "2026-05-25",
+        "count": 26
+      },
+      {
+        "date": "2026-05-26",
+        "count": 31
       }
     ],
-    "myzusDate": "21 mai",
-    "myzusTaux": 25.0,
-    "myzusColor": "#da2723"
+    "myzusDate": "26 mai",
+    "myzusTaux": 0.0,
+    "myzusColor": "#fff5f0"
   },
   {
     "name": "Guiclan",
@@ -751,9 +871,49 @@ const sites = [
       {
         "date": "2026-05-18",
         "count": 5
+      },
+      {
+        "date": "2026-05-19",
+        "count": 4
+      },
+      {
+        "date": "2026-05-20",
+        "count": 4
+      },
+      {
+        "date": "2026-05-21",
+        "count": 4
+      },
+      {
+        "date": "2026-05-22",
+        "count": 3
+      },
+      {
+        "date": "2026-05-23",
+        "count": 3
+      },
+      {
+        "date": "2026-05-24",
+        "count": 2
+      },
+      {
+        "date": "2026-05-25",
+        "count": 2
+      },
+      {
+        "date": "2026-05-26",
+        "count": 3
+      },
+      {
+        "date": "2026-05-27",
+        "count": 4
+      },
+      {
+        "date": "2026-05-28",
+        "count": 6
       }
     ],
-    "myzusDate": "18 mai",
+    "myzusDate": "28 mai",
     "myzusTaux": 0.0,
     "myzusColor": "#fff5f0"
   },
@@ -864,11 +1024,43 @@ const sites = [
       {
         "date": "2026-05-21",
         "count": 7
+      },
+      {
+        "date": "2026-05-22",
+        "count": 11
+      },
+      {
+        "date": "2026-05-23",
+        "count": 15
+      },
+      {
+        "date": "2026-05-24",
+        "count": 19
+      },
+      {
+        "date": "2026-05-25",
+        "count": 24
+      },
+      {
+        "date": "2026-05-26",
+        "count": 28
+      },
+      {
+        "date": "2026-05-27",
+        "count": 25
+      },
+      {
+        "date": "2026-05-28",
+        "count": 22
+      },
+      {
+        "date": "2026-05-29",
+        "count": 20
       }
     ],
-    "myzusDate": "21 mai",
-    "myzusTaux": 0.0,
-    "myzusColor": "#fff5f0"
+    "myzusDate": "29 mai",
+    "myzusTaux": 5.0,
+    "myzusColor": "#fc9b7c"
   },
   {
     "name": "Châteauneuf-du-Faou",
@@ -925,11 +1117,51 @@ const sites = [
       {
         "date": "2026-05-18",
         "count": 19
+      },
+      {
+        "date": "2026-05-19",
+        "count": 20
+      },
+      {
+        "date": "2026-05-20",
+        "count": 21
+      },
+      {
+        "date": "2026-05-21",
+        "count": 23
+      },
+      {
+        "date": "2026-05-22",
+        "count": 24
+      },
+      {
+        "date": "2026-05-23",
+        "count": 31
+      },
+      {
+        "date": "2026-05-24",
+        "count": 37
+      },
+      {
+        "date": "2026-05-25",
+        "count": 44
+      },
+      {
+        "date": "2026-05-26",
+        "count": 50
+      },
+      {
+        "date": "2026-05-27",
+        "count": 57
+      },
+      {
+        "date": "2026-05-28",
+        "count": 64
       }
     ],
-    "myzusDate": "18 mai",
-    "myzusTaux": 5.0,
-    "myzusColor": "#fc9b7c"
+    "myzusDate": "28 mai",
+    "myzusTaux": 0.0,
+    "myzusColor": "#fff5f0"
   },
   {
     "name": "Plounévez-Lochrist",
@@ -982,11 +1214,39 @@ const sites = [
       {
         "date": "2026-05-21",
         "count": 5
+      },
+      {
+        "date": "2026-05-22",
+        "count": 14
+      },
+      {
+        "date": "2026-05-23",
+        "count": 23
+      },
+      {
+        "date": "2026-05-24",
+        "count": 32
+      },
+      {
+        "date": "2026-05-25",
+        "count": 40
+      },
+      {
+        "date": "2026-05-26",
+        "count": 35
+      },
+      {
+        "date": "2026-05-27",
+        "count": 29
+      },
+      {
+        "date": "2026-05-28",
+        "count": 23
       }
     ],
-    "myzusDate": "21 mai",
-    "myzusTaux": 0.0,
-    "myzusColor": "#fff5f0"
+    "myzusDate": "28 mai",
+    "myzusTaux": 10.0,
+    "myzusColor": "#fb694a"
   },
   {
     "name": "Taupont",
@@ -1043,10 +1303,42 @@ const sites = [
       {
         "date": "2026-05-18",
         "count": 8
+      },
+      {
+        "date": "2026-05-19",
+        "count": 17
+      },
+      {
+        "date": "2026-05-20",
+        "count": 27
+      },
+      {
+        "date": "2026-05-21",
+        "count": 37
+      },
+      {
+        "date": "2026-05-22",
+        "count": 47
+      },
+      {
+        "date": "2026-05-23",
+        "count": 56
+      },
+      {
+        "date": "2026-05-24",
+        "count": 66
+      },
+      {
+        "date": "2026-05-25",
+        "count": 76
+      },
+      {
+        "date": "2026-05-26",
+        "count": 85
       }
     ],
-    "myzusDate": "18 mai",
-    "myzusTaux": 10.0,
-    "myzusColor": "#fb694a"
+    "myzusDate": "26 mai",
+    "myzusTaux": 0.0,
+    "myzusColor": "#fff5f0"
   }
 ];
