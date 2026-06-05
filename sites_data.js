@@ -162,11 +162,23 @@ const sites = [
       {
         "date": "2026-06-01",
         "count": 4
+      },
+      {
+        "date": "2026-06-02",
+        "count": 3
+      },
+      {
+        "date": "2026-06-03",
+        "count": 3
+      },
+      {
+        "date": "2026-06-04",
+        "count": 2
       }
     ],
-    "myzusDate": "01 juin",
-    "myzusTaux": 0.0,
-    "myzusColor": "#fff5f0"
+    "myzusDate": "04 juin",
+    "myzusTaux": 5.0,
+    "myzusColor": "#fc9b7c"
   },
   {
     "name": "Bieuzy",
@@ -911,11 +923,27 @@ const sites = [
       {
         "date": "2026-05-28",
         "count": 6
+      },
+      {
+        "date": "2026-05-29",
+        "count": 7
+      },
+      {
+        "date": "2026-05-30",
+        "count": 8
+      },
+      {
+        "date": "2026-05-31",
+        "count": 9
+      },
+      {
+        "date": "2026-06-01",
+        "count": 10
       }
     ],
-    "myzusDate": "28 mai",
-    "myzusTaux": 0.0,
-    "myzusColor": "#fff5f0"
+    "myzusDate": "01 juin",
+    "myzusTaux": 10.0,
+    "myzusColor": "#fb694a"
   },
   {
     "name": "Ploudalmézeau",
@@ -1242,11 +1270,27 @@ const sites = [
       {
         "date": "2026-05-28",
         "count": 23
+      },
+      {
+        "date": "2026-05-29",
+        "count": 19
+      },
+      {
+        "date": "2026-05-30",
+        "count": 14
+      },
+      {
+        "date": "2026-05-31",
+        "count": 10
+      },
+      {
+        "date": "2026-06-01",
+        "count": 5
       }
     ],
-    "myzusDate": "28 mai",
-    "myzusTaux": 10.0,
-    "myzusColor": "#fb694a"
+    "myzusDate": "01 juin",
+    "myzusTaux": 5.0,
+    "myzusColor": "#fc9b7c"
   },
   {
     "name": "Taupont",
