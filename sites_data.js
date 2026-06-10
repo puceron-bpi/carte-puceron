@@ -355,6 +355,34 @@ const sites = [
       {
         "date": "2026-06-01",
         "count": 45
+      },
+      {
+        "date": "2026-06-02",
+        "count": 40
+      },
+      {
+        "date": "2026-06-03",
+        "count": 35
+      },
+      {
+        "date": "2026-06-04",
+        "count": 30
+      },
+      {
+        "date": "2026-06-05",
+        "count": 24
+      },
+      {
+        "date": "2026-06-06",
+        "count": 19
+      },
+      {
+        "date": "2026-06-07",
+        "count": 14
+      },
+      {
+        "date": "2026-06-08",
+        "count": 9
       }
     ],
     "myzusDate": null,
@@ -512,6 +540,34 @@ const sites = [
       {
         "date": "2026-06-01",
         "count": 32
+      },
+      {
+        "date": "2026-06-02",
+        "count": 29
+      },
+      {
+        "date": "2026-06-03",
+        "count": 26
+      },
+      {
+        "date": "2026-06-04",
+        "count": 23
+      },
+      {
+        "date": "2026-06-05",
+        "count": 19
+      },
+      {
+        "date": "2026-06-06",
+        "count": 16
+      },
+      {
+        "date": "2026-06-07",
+        "count": 12
+      },
+      {
+        "date": "2026-06-08",
+        "count": 8
       }
     ],
     "myzusDate": null,
@@ -1084,11 +1140,23 @@ const sites = [
       {
         "date": "2026-05-29",
         "count": 20
+      },
+      {
+        "date": "2026-05-30",
+        "count": 15
+      },
+      {
+        "date": "2026-05-31",
+        "count": 10
+      },
+      {
+        "date": "2026-06-01",
+        "count": 5
       }
     ],
-    "myzusDate": "29 mai",
-    "myzusTaux": 5.0,
-    "myzusColor": "#fc9b7c"
+    "myzusDate": "01 juin",
+    "myzusTaux": 0.0,
+    "myzusColor": "#fff5f0"
   },
   {
     "name": "Châteauneuf-du-Faou",
@@ -1379,10 +1447,22 @@ const sites = [
       {
         "date": "2026-05-26",
         "count": 85
+      },
+      {
+        "date": "2026-05-27",
+        "count": 84
+      },
+      {
+        "date": "2026-05-28",
+        "count": 83
+      },
+      {
+        "date": "2026-05-29",
+        "count": 82
       }
     ],
-    "myzusDate": "26 mai",
-    "myzusTaux": 0.0,
-    "myzusColor": "#fff5f0"
+    "myzusDate": "29 mai",
+    "myzusTaux": 15.0,
+    "myzusColor": "#f34935"
   }
 ];
