@@ -174,11 +174,39 @@ const sites = [
       {
         "date": "2026-06-04",
         "count": 2
+      },
+      {
+        "date": "2026-06-05",
+        "count": 4
+      },
+      {
+        "date": "2026-06-06",
+        "count": 6
+      },
+      {
+        "date": "2026-06-07",
+        "count": 8
+      },
+      {
+        "date": "2026-06-08",
+        "count": 10
+      },
+      {
+        "date": "2026-06-09",
+        "count": 7
+      },
+      {
+        "date": "2026-06-10",
+        "count": 4
+      },
+      {
+        "date": "2026-06-11",
+        "count": 0
       }
     ],
-    "myzusDate": "04 juin",
-    "myzusTaux": 5.0,
-    "myzusColor": "#fc9b7c"
+    "myzusDate": "11 juin",
+    "myzusTaux": 0.0,
+    "myzusColor": "#fff5f0"
   },
   {
     "name": "Bieuzy",
@@ -383,6 +411,18 @@ const sites = [
       {
         "date": "2026-06-08",
         "count": 9
+      },
+      {
+        "date": "2026-06-09",
+        "count": 9
+      },
+      {
+        "date": "2026-06-10",
+        "count": 10
+      },
+      {
+        "date": "2026-06-11",
+        "count": 10
       }
     ],
     "myzusDate": null,
@@ -568,6 +608,18 @@ const sites = [
       {
         "date": "2026-06-08",
         "count": 8
+      },
+      {
+        "date": "2026-06-09",
+        "count": 7
+      },
+      {
+        "date": "2026-06-10",
+        "count": 5
+      },
+      {
+        "date": "2026-06-11",
+        "count": 3
       }
     ],
     "myzusDate": null,
@@ -709,11 +761,39 @@ const sites = [
       {
         "date": "2026-05-28",
         "count": 10
+      },
+      {
+        "date": "2026-05-29",
+        "count": 8
+      },
+      {
+        "date": "2026-05-30",
+        "count": 6
+      },
+      {
+        "date": "2026-05-31",
+        "count": 5
+      },
+      {
+        "date": "2026-06-01",
+        "count": 3
+      },
+      {
+        "date": "2026-06-02",
+        "count": 2
+      },
+      {
+        "date": "2026-06-03",
+        "count": 1
+      },
+      {
+        "date": "2026-06-04",
+        "count": 0
       }
     ],
-    "myzusDate": "28 mai",
-    "myzusTaux": 10.0,
-    "myzusColor": "#fb694a"
+    "myzusDate": "04 juin",
+    "myzusTaux": 0.0,
+    "myzusColor": "#fff5f0"
   },
   {
     "name": "St Guen",
@@ -838,11 +918,63 @@ const sites = [
       {
         "date": "2026-05-26",
         "count": 31
+      },
+      {
+        "date": "2026-05-27",
+        "count": 29
+      },
+      {
+        "date": "2026-05-28",
+        "count": 28
+      },
+      {
+        "date": "2026-05-29",
+        "count": 26
+      },
+      {
+        "date": "2026-05-30",
+        "count": 25
+      },
+      {
+        "date": "2026-05-31",
+        "count": 23
+      },
+      {
+        "date": "2026-06-01",
+        "count": 22
+      },
+      {
+        "date": "2026-06-02",
+        "count": 19
+      },
+      {
+        "date": "2026-06-03",
+        "count": 16
+      },
+      {
+        "date": "2026-06-04",
+        "count": 13
+      },
+      {
+        "date": "2026-06-05",
+        "count": 11
+      },
+      {
+        "date": "2026-06-06",
+        "count": 9
+      },
+      {
+        "date": "2026-06-07",
+        "count": 6
+      },
+      {
+        "date": "2026-06-08",
+        "count": 4
       }
     ],
-    "myzusDate": "26 mai",
-    "myzusTaux": 0.0,
-    "myzusColor": "#fff5f0"
+    "myzusDate": "08 juin",
+    "myzusTaux": 10.0,
+    "myzusColor": "#fb694a"
   },
   {
     "name": "Guiclan",
@@ -995,11 +1127,39 @@ const sites = [
       {
         "date": "2026-06-01",
         "count": 10
+      },
+      {
+        "date": "2026-06-02",
+        "count": 8
+      },
+      {
+        "date": "2026-06-03",
+        "count": 5
+      },
+      {
+        "date": "2026-06-04",
+        "count": 2
+      },
+      {
+        "date": "2026-06-05",
+        "count": 2
+      },
+      {
+        "date": "2026-06-06",
+        "count": 2
+      },
+      {
+        "date": "2026-06-07",
+        "count": 1
+      },
+      {
+        "date": "2026-06-08",
+        "count": 1
       }
     ],
-    "myzusDate": "01 juin",
-    "myzusTaux": 10.0,
-    "myzusColor": "#fb694a"
+    "myzusDate": "08 juin",
+    "myzusTaux": 0.0,
+    "myzusColor": "#fff5f0"
   },
   {
     "name": "Ploudalmézeau",
@@ -1152,9 +1312,37 @@ const sites = [
       {
         "date": "2026-06-01",
         "count": 5
+      },
+      {
+        "date": "2026-06-02",
+        "count": 4
+      },
+      {
+        "date": "2026-06-03",
+        "count": 4
+      },
+      {
+        "date": "2026-06-04",
+        "count": 3
+      },
+      {
+        "date": "2026-06-05",
+        "count": 3
+      },
+      {
+        "date": "2026-06-06",
+        "count": 2
+      },
+      {
+        "date": "2026-06-07",
+        "count": 2
+      },
+      {
+        "date": "2026-06-08",
+        "count": 1
       }
     ],
-    "myzusDate": "01 juin",
+    "myzusDate": "08 juin",
     "myzusTaux": 0.0,
     "myzusColor": "#fff5f0"
   },
@@ -1253,11 +1441,39 @@ const sites = [
       {
         "date": "2026-05-28",
         "count": 64
+      },
+      {
+        "date": "2026-05-29",
+        "count": 36
+      },
+      {
+        "date": "2026-05-30",
+        "count": 9
+      },
+      {
+        "date": "2026-05-31",
+        "count": -18
+      },
+      {
+        "date": "2026-06-01",
+        "count": -46
+      },
+      {
+        "date": "2026-06-02",
+        "count": -28
+      },
+      {
+        "date": "2026-06-03",
+        "count": -10
+      },
+      {
+        "date": "2026-06-04",
+        "count": 7
       }
     ],
-    "myzusDate": "28 mai",
-    "myzusTaux": 0.0,
-    "myzusColor": "#fff5f0"
+    "myzusDate": "04 juin",
+    "myzusTaux": 5.0,
+    "myzusColor": "#fc9b7c"
   },
   {
     "name": "Plounévez-Lochrist",
@@ -1354,11 +1570,23 @@ const sites = [
       {
         "date": "2026-06-01",
         "count": 5
+      },
+      {
+        "date": "2026-06-02",
+        "count": 4
+      },
+      {
+        "date": "2026-06-03",
+        "count": 2
+      },
+      {
+        "date": "2026-06-04",
+        "count": 1
       }
     ],
-    "myzusDate": "01 juin",
-    "myzusTaux": 5.0,
-    "myzusColor": "#fc9b7c"
+    "myzusDate": "04 juin",
+    "myzusTaux": 0.0,
+    "myzusColor": "#fff5f0"
   },
   {
     "name": "Taupont",
@@ -1459,10 +1687,34 @@ const sites = [
       {
         "date": "2026-05-29",
         "count": 82
+      },
+      {
+        "date": "2026-05-30",
+        "count": 59
+      },
+      {
+        "date": "2026-05-31",
+        "count": 36
+      },
+      {
+        "date": "2026-06-01",
+        "count": 14
+      },
+      {
+        "date": "2026-06-02",
+        "count": 12
+      },
+      {
+        "date": "2026-06-03",
+        "count": 10
+      },
+      {
+        "date": "2026-06-04",
+        "count": 8
       }
     ],
-    "myzusDate": "29 mai",
-    "myzusTaux": 15.0,
-    "myzusColor": "#f34935"
+    "myzusDate": "04 juin",
+    "myzusTaux": 10.0,
+    "myzusColor": "#fb694a"
   }
 ];
