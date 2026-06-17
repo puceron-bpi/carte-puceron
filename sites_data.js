@@ -202,9 +202,25 @@ const sites = [
       {
         "date": "2026-06-11",
         "count": 0
+      },
+      {
+        "date": "2026-06-12",
+        "count": 2
+      },
+      {
+        "date": "2026-06-13",
+        "count": 3
+      },
+      {
+        "date": "2026-06-14",
+        "count": 5
+      },
+      {
+        "date": "2026-06-15",
+        "count": 6
       }
     ],
-    "myzusDate": "11 juin",
+    "myzusDate": "15 juin",
     "myzusTaux": 0.0,
     "myzusColor": "#fff5f0"
   },
@@ -423,6 +439,26 @@ const sites = [
       {
         "date": "2026-06-11",
         "count": 10
+      },
+      {
+        "date": "2026-06-12",
+        "count": 11
+      },
+      {
+        "date": "2026-06-13",
+        "count": 12
+      },
+      {
+        "date": "2026-06-14",
+        "count": 13
+      },
+      {
+        "date": "2026-06-15",
+        "count": 14
+      },
+      {
+        "date": "2026-06-16",
+        "count": 15
       }
     ],
     "myzusDate": null,
@@ -620,6 +656,22 @@ const sites = [
       {
         "date": "2026-06-11",
         "count": 3
+      },
+      {
+        "date": "2026-06-12",
+        "count": 4
+      },
+      {
+        "date": "2026-06-13",
+        "count": 4
+      },
+      {
+        "date": "2026-06-14",
+        "count": 4
+      },
+      {
+        "date": "2026-06-15",
+        "count": 4
       }
     ],
     "myzusDate": null,
@@ -789,9 +841,37 @@ const sites = [
       {
         "date": "2026-06-04",
         "count": 0
+      },
+      {
+        "date": "2026-06-05",
+        "count": 1
+      },
+      {
+        "date": "2026-06-06",
+        "count": 2
+      },
+      {
+        "date": "2026-06-07",
+        "count": 2
+      },
+      {
+        "date": "2026-06-08",
+        "count": 3
+      },
+      {
+        "date": "2026-06-09",
+        "count": 3
+      },
+      {
+        "date": "2026-06-10",
+        "count": 2
+      },
+      {
+        "date": "2026-06-11",
+        "count": 2
       }
     ],
-    "myzusDate": "04 juin",
+    "myzusDate": "11 juin",
     "myzusTaux": 0.0,
     "myzusColor": "#fff5f0"
   },
@@ -1155,9 +1235,21 @@ const sites = [
       {
         "date": "2026-06-08",
         "count": 1
+      },
+      {
+        "date": "2026-06-09",
+        "count": 1
+      },
+      {
+        "date": "2026-06-10",
+        "count": 1
+      },
+      {
+        "date": "2026-06-11",
+        "count": 2
       }
     ],
-    "myzusDate": "08 juin",
+    "myzusDate": "11 juin",
     "myzusTaux": 0.0,
     "myzusColor": "#fff5f0"
   },
@@ -1340,11 +1432,23 @@ const sites = [
       {
         "date": "2026-06-08",
         "count": 1
+      },
+      {
+        "date": "2026-06-09",
+        "count": 2
+      },
+      {
+        "date": "2026-06-10",
+        "count": 3
+      },
+      {
+        "date": "2026-06-11",
+        "count": 4
       }
     ],
-    "myzusDate": "08 juin",
-    "myzusTaux": 0.0,
-    "myzusColor": "#fff5f0"
+    "myzusDate": "11 juin",
+    "myzusTaux": 5.0,
+    "myzusColor": "#fc9b7c"
   },
   {
     "name": "Châteauneuf-du-Faou",
@@ -1444,36 +1548,64 @@ const sites = [
       },
       {
         "date": "2026-05-29",
-        "count": 36
+        "count": 56
       },
       {
         "date": "2026-05-30",
-        "count": 9
+        "count": 49
       },
       {
         "date": "2026-05-31",
-        "count": -18
+        "count": 42
       },
       {
         "date": "2026-06-01",
-        "count": -46
+        "count": 34
       },
       {
         "date": "2026-06-02",
-        "count": -28
+        "count": 28
       },
       {
         "date": "2026-06-03",
-        "count": -10
+        "count": 23
       },
       {
         "date": "2026-06-04",
-        "count": 7
+        "count": 17
+      },
+      {
+        "date": "2026-06-05",
+        "count": 20
+      },
+      {
+        "date": "2026-06-06",
+        "count": 23
+      },
+      {
+        "date": "2026-06-07",
+        "count": 26
+      },
+      {
+        "date": "2026-06-08",
+        "count": 22
+      },
+      {
+        "date": "2026-06-09",
+        "count": 19
+      },
+      {
+        "date": "2026-06-10",
+        "count": 15
+      },
+      {
+        "date": "2026-06-11",
+        "count": 11
       }
     ],
-    "myzusDate": "04 juin",
-    "myzusTaux": 5.0,
-    "myzusColor": "#fc9b7c"
+    "myzusDate": "11 juin",
+    "myzusTaux": 0.0,
+    "myzusColor": "#fff5f0"
   },
   {
     "name": "Plounévez-Lochrist",
@@ -1582,9 +1714,37 @@ const sites = [
       {
         "date": "2026-06-04",
         "count": 1
+      },
+      {
+        "date": "2026-06-05",
+        "count": 1
+      },
+      {
+        "date": "2026-06-06",
+        "count": 1
+      },
+      {
+        "date": "2026-06-07",
+        "count": 1
+      },
+      {
+        "date": "2026-06-08",
+        "count": 2
+      },
+      {
+        "date": "2026-06-09",
+        "count": 1
+      },
+      {
+        "date": "2026-06-10",
+        "count": 1
+      },
+      {
+        "date": "2026-06-11",
+        "count": 1
       }
     ],
-    "myzusDate": "04 juin",
+    "myzusDate": "11 juin",
     "myzusTaux": 0.0,
     "myzusColor": "#fff5f0"
   },
