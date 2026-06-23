@@ -218,9 +218,37 @@ const sites = [
       {
         "date": "2026-06-15",
         "count": 6
+      },
+      {
+        "date": "2026-06-16",
+        "count": 15
+      },
+      {
+        "date": "2026-06-17",
+        "count": 23
+      },
+      {
+        "date": "2026-06-18",
+        "count": 32
+      },
+      {
+        "date": "2026-06-19",
+        "count": 33
+      },
+      {
+        "date": "2026-06-20",
+        "count": 33
+      },
+      {
+        "date": "2026-06-21",
+        "count": 34
+      },
+      {
+        "date": "2026-06-22",
+        "count": 35
       }
     ],
-    "myzusDate": "15 juin",
+    "myzusDate": "22 juin",
     "myzusTaux": 0.0,
     "myzusColor": "#fff5f0"
   },
@@ -459,6 +487,30 @@ const sites = [
       {
         "date": "2026-06-16",
         "count": 15
+      },
+      {
+        "date": "2026-06-17",
+        "count": 12
+      },
+      {
+        "date": "2026-06-18",
+        "count": 8
+      },
+      {
+        "date": "2026-06-19",
+        "count": 8
+      },
+      {
+        "date": "2026-06-20",
+        "count": 8
+      },
+      {
+        "date": "2026-06-21",
+        "count": 7
+      },
+      {
+        "date": "2026-06-22",
+        "count": 6
       }
     ],
     "myzusDate": null,
@@ -672,6 +724,34 @@ const sites = [
       {
         "date": "2026-06-15",
         "count": 4
+      },
+      {
+        "date": "2026-06-16",
+        "count": 4
+      },
+      {
+        "date": "2026-06-17",
+        "count": 4
+      },
+      {
+        "date": "2026-06-18",
+        "count": 4
+      },
+      {
+        "date": "2026-06-19",
+        "count": 4
+      },
+      {
+        "date": "2026-06-20",
+        "count": 6
+      },
+      {
+        "date": "2026-06-21",
+        "count": 8
+      },
+      {
+        "date": "2026-06-22",
+        "count": 10
       }
     ],
     "myzusDate": null,
@@ -869,9 +949,29 @@ const sites = [
       {
         "date": "2026-06-11",
         "count": 2
+      },
+      {
+        "date": "2026-06-12",
+        "count": 2
+      },
+      {
+        "date": "2026-06-13",
+        "count": 1
+      },
+      {
+        "date": "2026-06-14",
+        "count": 1
+      },
+      {
+        "date": "2026-06-15",
+        "count": 1
+      },
+      {
+        "date": "2026-06-16",
+        "count": 1
       }
     ],
-    "myzusDate": "11 juin",
+    "myzusDate": "16 juin",
     "myzusTaux": 0.0,
     "myzusColor": "#fff5f0"
   },
@@ -1050,11 +1150,39 @@ const sites = [
       {
         "date": "2026-06-08",
         "count": 4
+      },
+      {
+        "date": "2026-06-09",
+        "count": 4
+      },
+      {
+        "date": "2026-06-10",
+        "count": 3
+      },
+      {
+        "date": "2026-06-11",
+        "count": 3
+      },
+      {
+        "date": "2026-06-12",
+        "count": 4
+      },
+      {
+        "date": "2026-06-13",
+        "count": 5
+      },
+      {
+        "date": "2026-06-14",
+        "count": 5
+      },
+      {
+        "date": "2026-06-15",
+        "count": 6
       }
     ],
-    "myzusDate": "08 juin",
-    "myzusTaux": 10.0,
-    "myzusColor": "#fb694a"
+    "myzusDate": "15 juin",
+    "myzusTaux": 5.0,
+    "myzusColor": "#fc9b7c"
   },
   {
     "name": "Guiclan",
@@ -1247,11 +1375,39 @@ const sites = [
       {
         "date": "2026-06-11",
         "count": 2
+      },
+      {
+        "date": "2026-06-12",
+        "count": 2
+      },
+      {
+        "date": "2026-06-13",
+        "count": 2
+      },
+      {
+        "date": "2026-06-14",
+        "count": 2
+      },
+      {
+        "date": "2026-06-15",
+        "count": 2
+      },
+      {
+        "date": "2026-06-16",
+        "count": 2
+      },
+      {
+        "date": "2026-06-17",
+        "count": 1
+      },
+      {
+        "date": "2026-06-18",
+        "count": 1
       }
     ],
-    "myzusDate": "11 juin",
-    "myzusTaux": 0.0,
-    "myzusColor": "#fff5f0"
+    "myzusDate": "18 juin",
+    "myzusTaux": 5.0,
+    "myzusColor": "#fc9b7c"
   },
   {
     "name": "Ploudalmézeau",
@@ -1444,11 +1600,31 @@ const sites = [
       {
         "date": "2026-06-11",
         "count": 4
+      },
+      {
+        "date": "2026-06-12",
+        "count": 3
+      },
+      {
+        "date": "2026-06-13",
+        "count": 3
+      },
+      {
+        "date": "2026-06-14",
+        "count": 2
+      },
+      {
+        "date": "2026-06-15",
+        "count": 2
+      },
+      {
+        "date": "2026-06-16",
+        "count": 8
       }
     ],
-    "myzusDate": "11 juin",
-    "myzusTaux": 5.0,
-    "myzusColor": "#fc9b7c"
+    "myzusDate": "16 juin",
+    "myzusTaux": 0.0,
+    "myzusColor": "#fff5f0"
   },
   {
     "name": "Châteauneuf-du-Faou",
@@ -1601,9 +1777,37 @@ const sites = [
       {
         "date": "2026-06-11",
         "count": 11
+      },
+      {
+        "date": "2026-06-12",
+        "count": 9
+      },
+      {
+        "date": "2026-06-13",
+        "count": 7
+      },
+      {
+        "date": "2026-06-14",
+        "count": 6
+      },
+      {
+        "date": "2026-06-15",
+        "count": 4
+      },
+      {
+        "date": "2026-06-16",
+        "count": 4
+      },
+      {
+        "date": "2026-06-17",
+        "count": 3
+      },
+      {
+        "date": "2026-06-18",
+        "count": 3
       }
     ],
-    "myzusDate": "11 juin",
+    "myzusDate": "18 juin",
     "myzusTaux": 0.0,
     "myzusColor": "#fff5f0"
   },
@@ -1742,9 +1946,37 @@ const sites = [
       {
         "date": "2026-06-11",
         "count": 1
+      },
+      {
+        "date": "2026-06-12",
+        "count": 1
+      },
+      {
+        "date": "2026-06-13",
+        "count": 1
+      },
+      {
+        "date": "2026-06-14",
+        "count": 2
+      },
+      {
+        "date": "2026-06-15",
+        "count": 2
+      },
+      {
+        "date": "2026-06-16",
+        "count": 2
+      },
+      {
+        "date": "2026-06-17",
+        "count": 1
+      },
+      {
+        "date": "2026-06-18",
+        "count": 1
       }
     ],
-    "myzusDate": "11 juin",
+    "myzusDate": "18 juin",
     "myzusTaux": 0.0,
     "myzusColor": "#fff5f0"
   },
