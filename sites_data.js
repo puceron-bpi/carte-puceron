@@ -302,9 +302,21 @@ const sites = [
       {
         "date": "2026-07-06",
         "count": 0
+      },
+      {
+        "date": "2026-07-07",
+        "count": 0
+      },
+      {
+        "date": "2026-07-08",
+        "count": 0
+      },
+      {
+        "date": "2026-07-09",
+        "count": 0
       }
     ],
-    "myzusDate": "06 juillet",
+    "myzusDate": "09 juillet",
     "myzusTaux": 0.0,
     "myzusColor": "#fff5f0"
   },
@@ -623,6 +635,18 @@ const sites = [
       {
         "date": "2026-07-06",
         "count": 1
+      },
+      {
+        "date": "2026-07-07",
+        "count": 1
+      },
+      {
+        "date": "2026-07-08",
+        "count": 1
+      },
+      {
+        "date": "2026-07-09",
+        "count": 1
       }
     ],
     "myzusDate": null,
@@ -920,6 +944,18 @@ const sites = [
       {
         "date": "2026-07-06",
         "count": 0
+      },
+      {
+        "date": "2026-07-07",
+        "count": 0
+      },
+      {
+        "date": "2026-07-08",
+        "count": 1
+      },
+      {
+        "date": "2026-07-09",
+        "count": 1
       }
     ],
     "myzusDate": null,
