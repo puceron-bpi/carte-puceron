@@ -314,9 +314,53 @@ const sites = [
       {
         "date": "2026-07-09",
         "count": 0
+      },
+      {
+        "date": "2026-07-10",
+        "count": 0
+      },
+      {
+        "date": "2026-07-11",
+        "count": 0
+      },
+      {
+        "date": "2026-07-12",
+        "count": 1
+      },
+      {
+        "date": "2026-07-13",
+        "count": 1
+      },
+      {
+        "date": "2026-07-14",
+        "count": 1
+      },
+      {
+        "date": "2026-07-15",
+        "count": 1
+      },
+      {
+        "date": "2026-07-16",
+        "count": 2
+      },
+      {
+        "date": "2026-07-17",
+        "count": 1
+      },
+      {
+        "date": "2026-07-18",
+        "count": 1
+      },
+      {
+        "date": "2026-07-19",
+        "count": 1
+      },
+      {
+        "date": "2026-07-20",
+        "count": 1
       }
     ],
-    "myzusDate": "09 juillet",
+    "myzusDate": "20 juillet",
     "myzusTaux": 0.0,
     "myzusColor": "#fff5f0"
   },
@@ -647,6 +691,50 @@ const sites = [
       {
         "date": "2026-07-09",
         "count": 1
+      },
+      {
+        "date": "2026-07-10",
+        "count": 1
+      },
+      {
+        "date": "2026-07-11",
+        "count": 1
+      },
+      {
+        "date": "2026-07-12",
+        "count": 1
+      },
+      {
+        "date": "2026-07-13",
+        "count": 1
+      },
+      {
+        "date": "2026-07-14",
+        "count": 0
+      },
+      {
+        "date": "2026-07-15",
+        "count": 0
+      },
+      {
+        "date": "2026-07-16",
+        "count": 0
+      },
+      {
+        "date": "2026-07-17",
+        "count": 0
+      },
+      {
+        "date": "2026-07-18",
+        "count": 0
+      },
+      {
+        "date": "2026-07-19",
+        "count": 0
+      },
+      {
+        "date": "2026-07-20",
+        "count": 0
       }
     ],
     "myzusDate": null,
@@ -1229,9 +1317,49 @@ const sites = [
       {
         "date": "2026-06-30",
         "count": 0
+      },
+      {
+        "date": "2026-07-01",
+        "count": 0
+      },
+      {
+        "date": "2026-07-02",
+        "count": 0
+      },
+      {
+        "date": "2026-07-03",
+        "count": 0
+      },
+      {
+        "date": "2026-07-04",
+        "count": 0
+      },
+      {
+        "date": "2026-07-05",
+        "count": 0
+      },
+      {
+        "date": "2026-07-06",
+        "count": 0
+      },
+      {
+        "date": "2026-07-07",
+        "count": 0
+      },
+      {
+        "date": "2026-07-08",
+        "count": 0
+      },
+      {
+        "date": "2026-07-09",
+        "count": 0
+      },
+      {
+        "date": "2026-07-10",
+        "count": 0
       }
     ],
-    "myzusDate": "30 juin",
+    "myzusDate": "10 juillet",
     "myzusTaux": 0.0,
     "myzusColor": "#fff5f0"
   },
@@ -1494,9 +1622,77 @@ const sites = [
       {
         "date": "2026-06-29",
         "count": 1
+      },
+      {
+        "date": "2026-06-30",
+        "count": 1
+      },
+      {
+        "date": "2026-07-01",
+        "count": 1
+      },
+      {
+        "date": "2026-07-02",
+        "count": 0
+      },
+      {
+        "date": "2026-07-03",
+        "count": 0
+      },
+      {
+        "date": "2026-07-04",
+        "count": 1
+      },
+      {
+        "date": "2026-07-05",
+        "count": 1
+      },
+      {
+        "date": "2026-07-06",
+        "count": 1
+      },
+      {
+        "date": "2026-07-07",
+        "count": 1
+      },
+      {
+        "date": "2026-07-08",
+        "count": 1
+      },
+      {
+        "date": "2026-07-09",
+        "count": 1
+      },
+      {
+        "date": "2026-07-10",
+        "count": 0
+      },
+      {
+        "date": "2026-07-11",
+        "count": 0
+      },
+      {
+        "date": "2026-07-12",
+        "count": 0
+      },
+      {
+        "date": "2026-07-13",
+        "count": 0
+      },
+      {
+        "date": "2026-07-14",
+        "count": 0
+      },
+      {
+        "date": "2026-07-15",
+        "count": 0
+      },
+      {
+        "date": "2026-07-16",
+        "count": 0
       }
     ],
-    "myzusDate": "29 juin",
+    "myzusDate": "16 juillet",
     "myzusTaux": 0.0,
     "myzusColor": "#fff5f0"
   },
@@ -1775,9 +1971,61 @@ const sites = [
       {
         "date": "2026-07-02",
         "count": 0
+      },
+      {
+        "date": "2026-07-03",
+        "count": 0
+      },
+      {
+        "date": "2026-07-04",
+        "count": 0
+      },
+      {
+        "date": "2026-07-05",
+        "count": 0
+      },
+      {
+        "date": "2026-07-06",
+        "count": 0
+      },
+      {
+        "date": "2026-07-07",
+        "count": 0
+      },
+      {
+        "date": "2026-07-08",
+        "count": 0
+      },
+      {
+        "date": "2026-07-09",
+        "count": 0
+      },
+      {
+        "date": "2026-07-10",
+        "count": 0
+      },
+      {
+        "date": "2026-07-11",
+        "count": 0
+      },
+      {
+        "date": "2026-07-12",
+        "count": 0
+      },
+      {
+        "date": "2026-07-13",
+        "count": 0
+      },
+      {
+        "date": "2026-07-14",
+        "count": 0
+      },
+      {
+        "date": "2026-07-15",
+        "count": 0
       }
     ],
-    "myzusDate": "02 juillet",
+    "myzusDate": "15 juillet",
     "myzusTaux": 0.0,
     "myzusColor": "#fff5f0"
   },
@@ -2060,9 +2308,61 @@ const sites = [
       {
         "date": "2026-07-03",
         "count": 1
+      },
+      {
+        "date": "2026-07-04",
+        "count": 1
+      },
+      {
+        "date": "2026-07-05",
+        "count": 0
+      },
+      {
+        "date": "2026-07-06",
+        "count": 0
+      },
+      {
+        "date": "2026-07-07",
+        "count": 0
+      },
+      {
+        "date": "2026-07-08",
+        "count": 0
+      },
+      {
+        "date": "2026-07-09",
+        "count": 0
+      },
+      {
+        "date": "2026-07-10",
+        "count": 0
+      },
+      {
+        "date": "2026-07-11",
+        "count": 0
+      },
+      {
+        "date": "2026-07-12",
+        "count": 0
+      },
+      {
+        "date": "2026-07-13",
+        "count": 0
+      },
+      {
+        "date": "2026-07-14",
+        "count": 0
+      },
+      {
+        "date": "2026-07-15",
+        "count": 0
+      },
+      {
+        "date": "2026-07-16",
+        "count": 0
       }
     ],
-    "myzusDate": "03 juillet",
+    "myzusDate": "16 juillet",
     "myzusTaux": 0.0,
     "myzusColor": "#fff5f0"
   },
@@ -2317,9 +2617,21 @@ const sites = [
       {
         "date": "2026-07-06",
         "count": 0
+      },
+      {
+        "date": "2026-07-07",
+        "count": 0
+      },
+      {
+        "date": "2026-07-08",
+        "count": 0
+      },
+      {
+        "date": "2026-07-09",
+        "count": 0
       }
     ],
-    "myzusDate": "06 juillet",
+    "myzusDate": "09 juillet",
     "myzusTaux": 0.0,
     "myzusColor": "#fff5f0"
   },
@@ -2542,9 +2854,53 @@ const sites = [
       {
         "date": "2026-07-02",
         "count": 0
+      },
+      {
+        "date": "2026-07-03",
+        "count": 0
+      },
+      {
+        "date": "2026-07-04",
+        "count": 0
+      },
+      {
+        "date": "2026-07-05",
+        "count": 0
+      },
+      {
+        "date": "2026-07-06",
+        "count": 0
+      },
+      {
+        "date": "2026-07-07",
+        "count": 0
+      },
+      {
+        "date": "2026-07-08",
+        "count": 0
+      },
+      {
+        "date": "2026-07-09",
+        "count": 0
+      },
+      {
+        "date": "2026-07-10",
+        "count": 0
+      },
+      {
+        "date": "2026-07-11",
+        "count": 0
+      },
+      {
+        "date": "2026-07-12",
+        "count": 0
+      },
+      {
+        "date": "2026-07-13",
+        "count": 0
       }
     ],
-    "myzusDate": "02 juillet",
+    "myzusDate": "13 juillet",
     "myzusTaux": 0.0,
     "myzusColor": "#fff5f0"
   },
@@ -2771,9 +3127,73 @@ const sites = [
       {
         "date": "2026-06-29",
         "count": 0
+      },
+      {
+        "date": "2026-06-30",
+        "count": 0
+      },
+      {
+        "date": "2026-07-01",
+        "count": 0
+      },
+      {
+        "date": "2026-07-02",
+        "count": 0
+      },
+      {
+        "date": "2026-07-03",
+        "count": 0
+      },
+      {
+        "date": "2026-07-04",
+        "count": 0
+      },
+      {
+        "date": "2026-07-05",
+        "count": 0
+      },
+      {
+        "date": "2026-07-06",
+        "count": 1
+      },
+      {
+        "date": "2026-07-07",
+        "count": 1
+      },
+      {
+        "date": "2026-07-08",
+        "count": 1
+      },
+      {
+        "date": "2026-07-09",
+        "count": 1
+      },
+      {
+        "date": "2026-07-10",
+        "count": 1
+      },
+      {
+        "date": "2026-07-11",
+        "count": 1
+      },
+      {
+        "date": "2026-07-12",
+        "count": 1
+      },
+      {
+        "date": "2026-07-13",
+        "count": 1
+      },
+      {
+        "date": "2026-07-14",
+        "count": 1
+      },
+      {
+        "date": "2026-07-15",
+        "count": 0
       }
     ],
-    "myzusDate": "29 juin",
+    "myzusDate": "15 juillet",
     "myzusTaux": 0.0,
     "myzusColor": "#fff5f0"
   }
