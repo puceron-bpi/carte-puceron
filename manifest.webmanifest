@@ -1,0 +1,17 @@
+{
+  "name": "Pucerons – Réseau de piégeage Bretagne Plants",
+  "short_name": "Pucerons BPI",
+  "description": "Captures de pucerons du réseau de piégeage Bretagne Plants Innovation : carte, courbes par site et comparaison des années.",
+  "lang": "fr",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2f3b2f",
+  "icons": [
+    { "src": "icones/icone-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icones/icone-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icones/icone-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

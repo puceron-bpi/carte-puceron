@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pucerons : comparaison des années</title>
   <link rel="stylesheet" href="commun.css" />
+  <!-- Appli installable -->
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#2f3b2f" />
+  <link rel="icon" href="icones/icone-192.png" />
+  <link rel="apple-touch-icon" href="icones/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Pucerons BPI" />
   <style>
     #entete { padding: 8px 16px; background: #f5f5f5; border-bottom: 1px solid #ddd; text-align: center; }
     #entete .titre { font-size: 0.95rem; font-weight: bold; }
@@ -79,9 +86,14 @@
       legend: petitEcran
         ? { orientation: 'h', x: 0, y: -0.12, yanchor: 'top', font: { size: 11 } }
         : { font: { size: 13 } },
-      xaxis: { type: 'date', tickformat: '%d %b' },
-      yaxis: { title: { text: 'Pucerons capturés par jour (moyenne du réseau)' }, rangemode: 'tozero' }
-    }, { responsive: true, displaylogo: false, locale: 'fr' });
+      // Sur téléphone, graphique figé : toucher affiche la valeur sans zoomer ni déplacer
+      dragmode: petitEcran ? false : 'zoom',
+      xaxis: { type: 'date', tickformat: '%d %b', fixedrange: petitEcran },
+      yaxis: { title: { text: 'Pucerons capturés par jour (moyenne du réseau)' }, rangemode: 'tozero', fixedrange: petitEcran }
+    }, { responsive: true, displaylogo: false, locale: 'fr',
+         displayModeBar: !petitEcran, scrollZoom: false, doubleClick: !petitEcran && 'reset' });
   </script>
+  <script src="pwa.js"></script>
+  <script src="notifications.js"></script>
 </body>
 </html>
