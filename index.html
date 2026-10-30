@@ -128,17 +128,21 @@
 
     // ── Carte ──
     const map = L.map('map').setView([48.0, -3.5], petitEcran ? 7 : 8);
-    // OpenStreetMap refuse les fonds de carte quand la page est ouverte depuis le disque
-    // (double-clic sur index.html) : on prend alors le fond CARTO, qui reste basé sur OSM.
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Page ouverte par double-clic sur index.html : OpenStreetMap refuse alors le fond de carte.
     if (location.protocol === 'file:') {
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png', {
-        attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
-        subdomains: 'abcd'
-      }).addTo(map);
-    } else {
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; OpenStreetMap contributors'
-      }).addTo(map);
+      const avis = L.control({ position: 'topright' });
+      avis.onAdd = () => {
+        const div = L.DomUtil.create('div');
+        div.style.cssText = 'background:#fff3cd;border:1px solid #e0c060;border-radius:6px;padding:8px 12px;max-width:280px;font-size:0.85rem;';
+        div.innerHTML = 'Fond de carte indisponible quand la page est ouverte depuis le disque.<br>' +
+          '<a href="https://puceron-bpi.github.io/carte-puceron/" target="_blank">Ouvrir le site en ligne</a>';
+        return div;
+      };
+      avis.addTo(map);
     }
 
     const LogoControl = L.Control.extend({
