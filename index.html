@@ -60,7 +60,7 @@
       margin-right: 8px; vertical-align: middle; border-radius: 50%;
     }
     .legend-border { background: white; border: 3px solid #377eb8; }
-    .legend-grey { background: #d0d0d0; border: 2px dashed #888; }
+    .legend-grey { background: #d0d0d0; border: 3px dashed #377eb8; }
     .legend-gradient {
       height: 10px; border-radius: 4px; border: 1px solid #ccc;
       background: linear-gradient(to right, #fff5f0, #fcbba1, #fb6a4a, #cb181d, #67000d);
@@ -80,7 +80,7 @@
     /* Téléphone / petit écran : carte au-dessus, graphique en dessous */
     @media (max-width: 800px) {
       #main { flex-direction: column; }
-      #map { flex: 0 0 38%; height: auto; }
+      #map { flex: 0 0 42%; height: auto; }
       #chart-container { flex: 1 1 auto; height: auto; min-height: 0; }
       /* Légende ancrée en haut à droite : le titre (pour la refermer) reste toujours visible,
          et le contenu défile s'il dépasse la hauteur de la carte. */
@@ -88,9 +88,14 @@
         left: auto; bottom: auto; top: 8px; right: 8px;
         /* 30 px libres en bas pour la mention OpenStreetMap */
         max-width: 230px; max-height: calc(100% - 38px); overflow-y: auto;
-        padding: 6px 10px; font-size: 0.8rem;
+        padding: 6px 10px; font-size: 0.75rem;
       }
       #legend summary { position: sticky; top: 0; background: white; padding: 2px 0; }
+      /* Légende compacte pour tenir sans défiler dans la petite carte */
+      #legend p { margin: 4px 0; line-height: 1.25; }
+      #legend .legend-border, #legend .legend-grey { width: 12px; height: 12px; margin-right: 6px; }
+      #legend .aide-pc { display: none; }
+      #legend[open] { padding-bottom: 8px; }
       .leaflet-control-logo img { height: 36px; }
       .leaflet-control-attribution { font-size: 9px; }
     }
@@ -124,7 +129,7 @@
         <div class="legend-gradient"></div>
         <div class="legend-scale"><span>0-1 %</span><span>10 %</span><span>100 %</span></div>
         <p><span class="legend-grey"></span>Pas d'analyse <em>Myzus</em></p>
-        <p class="legend-note">Touchez ou survolez un site pour le détail. Le taux de <em>Myzus</em> est estimé sur un échantillon de 20 pucerons capturés par site.</p>
+        <p class="legend-note"><span class="aide-pc">Touchez ou survolez un site pour le détail. </span>Taux de <em>Myzus</em> estimé sur 20 pucerons capturés par site.</p>
       </details>
     </div>
 
@@ -257,7 +262,8 @@
           weight: 3,
           radius: petitEcran ? 10 : 8,
           fillOpacity: aMyzus ? 0.9 : 0.6,
-          fillColor: aMyzus ? (site.myzusColor || '#fff5f0') : '#d0d0d0'
+          fillColor: aMyzus ? (site.myzusColor || '#fff5f0') : '#d0d0d0',
+          dashArray: aMyzus ? null : '4 3'   // contour en pointillés = pas d'analyse Myzus (cf. légende)
         }).addTo(coucheSites);
 
         const lastData = site.data[site.data.length - 1];

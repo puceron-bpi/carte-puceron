@@ -14,9 +14,27 @@
     "St Guen":            [48.2167, -2.9333],
     "Plounévez-Lochrist": [48.6170, -4.2120],
     "Ploudalmézeau":      [48.5440, -4.6570],
-    "Taupont":            [47.9594, -2.4375]
+    "Taupont":            [47.9594, -2.4375],
+    "Landrévarzec":       [48.0878, -4.0745],
+    "Pontivy":            [48.0656, -2.9752],
+    "Naizin":             [47.9899, -2.8316],
+    "Laniscat":           [48.2385, -3.1226],
+    "Ménéac":             [48.1214, -2.4545],
+    "Neulliac":           [48.1249, -2.9599],
+    "Plouvien":           [48.5315, -4.4743],
+    "Saint-Derrien":      [48.5469, -4.1866],
+    "Guern":              [48.0343, -3.0983],
+    "Saint-Méen-le-Grand":[48.1911, -2.1896]
   },
   "alias": {
-    "Chateauneuf": "Châteauneuf-du-Faou"
+    "Chateauneuf": "Châteauneuf-du-Faou",
+    "Clegeurec": "Cléguérec",
+    "Saint-Caradec": "St caradec",
+    "Ploeuc sur lie": "Ploeuc",
+    "Ploeuc-sur-lie": "Ploeuc",
+    "Plouec": "Ploeuc",
+    "Neuillac": "Neulliac",
+    "St Derrien": "Saint-Derrien",
+    "St Meen": "Saint-Méen-le-Grand"
   }
 }
