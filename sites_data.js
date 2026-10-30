@@ -1,4 +1,4 @@
-const majDonnees = {"generation": "2026-10-30 12:09", "dernierReleve": "2026-07-31", "annee": 2026};
+const majDonnees = {"generation": "2026-10-30 12:28", "dernierReleve": "2026-07-31", "annee": 2026};
 const sites = [
  {
   "name": "Hanvec",
@@ -8,10 +8,6 @@ const sites = [
   ],
   "color": "#1b9e77",
   "data": [
-   {
-    "date": "2026-04-24",
-    "count": 10.3
-   },
    {
     "date": "2026-04-27",
     "count": 10.3
@@ -126,10 +122,6 @@ const sites = [
   "color": "#e41a1c",
   "data": [
    {
-    "date": "2026-04-21",
-    "count": 45.0
-   },
-   {
     "date": "2026-04-27",
     "count": 45.0
    },
@@ -239,10 +231,6 @@ const sites = [
   "color": "#377eb8",
   "data": [
    {
-    "date": "2026-04-27",
-    "count": 28.5
-   },
-   {
     "date": "2026-04-29",
     "count": 28.5
    },
@@ -344,10 +332,6 @@ const sites = [
   "color": "#17becf",
   "data": [
    {
-    "date": "2026-04-27",
-    "count": 105.3
-   },
-   {
     "date": "2026-04-30",
     "count": 105.3
    },
@@ -445,10 +429,6 @@ const sites = [
   "color": "#7570b3",
   "data": [
    {
-    "date": "2026-04-28",
-    "count": 36.5
-   },
-   {
     "date": "2026-04-30",
     "count": 36.5
    },
@@ -542,10 +522,6 @@ const sites = [
   "color": "#666666",
   "data": [
    {
-    "date": "2026-04-27",
-    "count": 7.0
-   },
-   {
     "date": "2026-04-30",
     "count": 7.0
    },
@@ -638,10 +614,6 @@ const sites = [
   ],
   "color": "#66a61e",
   "data": [
-   {
-    "date": "2026-04-27",
-    "count": 11.0
-   },
    {
     "date": "2026-04-30",
     "count": 11.0
@@ -740,10 +712,6 @@ const sites = [
   "color": "#b8860b",
   "data": [
    {
-    "date": "2026-05-07",
-    "count": 0.0
-   },
-   {
     "date": "2026-05-11",
     "count": 33.0
    },
@@ -824,10 +792,6 @@ const sites = [
   ],
   "color": "#e7298a",
   "data": [
-   {
-    "date": "2026-05-11",
-    "count": 0.0
-   },
    {
     "date": "2026-05-15",
     "count": 6.2
@@ -921,10 +885,6 @@ const sites = [
   ],
   "color": "#000080",
   "data": [
-   {
-    "date": "2026-05-07",
-    "count": 112.8
-   },
    {
     "date": "2026-05-11",
     "count": 112.8
