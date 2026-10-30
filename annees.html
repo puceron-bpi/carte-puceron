@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pucerons : comparaison des années</title>
+  <link rel="stylesheet" href="commun.css" />
+  <style>
+    #entete { padding: 8px 16px; background: #f5f5f5; border-bottom: 1px solid #ddd; text-align: center; }
+    #entete .titre { font-size: 0.95rem; font-weight: bold; }
+    #entete .note { font-size: 0.8rem; color: #555; margin-top: 2px; }
+    #chart { flex: 1; min-height: 0; }
+  </style>
+  <!-- Compteur de visites GoatCounter (sans cookies). Ne compte pas les visites en local. -->
+  <script data-goatcounter="https://puceron-bpi.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</head>
+<body>
+  <div id="topbar">
+    <span class="site-titre">Réseau de piégeage des pucerons</span>
+    <nav>
+      <a href="index.html">Carte par année</a>
+      <a href="annees.html" class="actif">Toutes les années</a>
+    </nav>
+  </div>
+  <div id="avertissement">
+    ⚠️ Ces données font état de captures <strong>passées</strong> (relevés tous les 3 à 4 jours).
+    Elles permettent de suivre la dynamique des vols de pucerons, mais ne constituent pas un avertissement
+    et ne doivent pas servir à déclencher une intervention de traitement.
+  </div>
+  <div id="entete">
+    <div class="titre">📈 Captures moyennes du réseau, année par année</div>
+    <div class="note">
+      Moyenne de tous les sites suivis chaque année (les sites changent d'une année à l'autre), valeurs estimées jour
+      par jour entre deux relevés. Cliquez sur une année dans la légende pour l'afficher ou la masquer.
+    </div>
+  </div>
+  <div id="chart"></div>
+
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-locale-fr-2.35.2.js"></script>
+  <script src="annees_data.js"></script>
+  <script>
+    const petitEcran = window.matchMedia('(max-width: 800px)').matches;
+    // Toutes les années sont ramenées sur un même calendrier (2020) : seuls le jour et le mois comptent.
+    const versDate = j => `2020-${j}`;
+
+    const annees = Object.keys(moyennesAnnees).sort();
+    const anneeCourante = String(majDonneesAnnees.annee);
+    const couleurs = ['#1b9e77', '#d95f02', '#7570b3', '#e7298a', '#66a61e', '#e6ab02', '#a6761d',
+                      '#17becf', '#8c564b', '#bcbd22'];
+
+    const traces = annees.map((a, i) => {
+      const courante = a === anneeCourante;
+      return {
+        x: moyennesAnnees[a].map(p => versDate(p.j)),
+        y: moyennesAnnees[a].map(p => p.v),
+        name: courante ? `${a} (en cours)` : a,
+        type: 'scatter',
+        mode: 'lines',
+        line: { color: courante ? '#d62728' : couleurs[i % couleurs.length], width: courante ? 3.5 : 1.8 },
+        opacity: courante ? 1 : 0.8,
+        hovertemplate: `<b>${a}</b> · %{x|%d %B} : %{y} pucerons/jour<extra></extra>`
+      };
+    });
+
+    traces.push({
+      x: moyenneGlobale.map(p => versDate(p.j)),
+      y: moyenneGlobale.map(p => p.v),
+      name: `Moyenne ${annees[0]}-${annees[annees.length - 1]}`,
+      type: 'scatter',
+      mode: 'lines',
+      line: { color: 'black', width: 4, dash: 'dash' },
+      hovertemplate: `<b>Moyenne</b> · %{x|%d %B} : %{y} pucerons/jour<extra></extra>`
+    });
+
+    Plotly.newPlot('chart', traces, {
+      margin: petitEcran ? { t: 10, r: 10, b: 40, l: 45 } : { t: 20, r: 20, b: 50, l: 60 },
+      hovermode: 'closest',
+      legend: petitEcran
+        ? { orientation: 'h', x: 0, y: -0.12, yanchor: 'top', font: { size: 11 } }
+        : { font: { size: 13 } },
+      xaxis: { type: 'date', tickformat: '%d %b' },
+      yaxis: { title: { text: 'Pucerons capturés par jour (moyenne du réseau)' }, rangemode: 'tozero' }
+    }, { responsive: true, displaylogo: false, locale: 'fr' });
+  </script>
+</body>
+</html>

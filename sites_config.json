@@ -15,5 +15,8 @@
     "Plounévez-Lochrist": [48.6170, -4.2120],
     "Ploudalmézeau":      [48.5440, -4.6570],
     "Taupont":            [47.9594, -2.4375]
+  },
+  "alias": {
+    "Chateauneuf": "Châteauneuf-du-Faou"
   }
 }

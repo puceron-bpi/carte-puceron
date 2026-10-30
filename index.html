@@ -5,11 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Carte interactive des sites de collecte de pucerons</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="commun.css" />
   <style>
-    * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; height: 100%; font-family: sans-serif; color: #222; }
-    body { display: flex; height: 100vh; height: 100dvh; }
-
+    #main { flex: 1; display: flex; min-height: 0; }
     #map { flex: 1 1 50%; height: 100%; position: relative; }
     .leaflet-container { background: white !important; }
     #chart-container { flex: 1 1 50%; height: 100%; display: flex; flex-direction: column; min-width: 0; }
@@ -65,34 +63,54 @@
 
     /* Téléphone / petit écran : carte au-dessus, graphique en dessous */
     @media (max-width: 800px) {
-      body { flex-direction: column; }
-      #map { flex: 0 0 42%; height: auto; }
-      #chart-container { flex: 1 1 auto; height: auto; }
+      #main { flex-direction: column; }
+      #map { flex: 0 0 38%; height: auto; }
+      #chart-container { flex: 1 1 auto; height: auto; min-height: 0; }
       #legend { left: 8px; bottom: 8px; max-width: 220px; padding: 6px 10px; font-size: 0.8rem; }
       .leaflet-control-logo img { height: 36px; }
     }
   </style>
+  <!-- Compteur de visites GoatCounter (sans cookies). Ne compte pas les visites en local. -->
+  <script data-goatcounter="https://puceron-bpi.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
-  <div id="map">
-    <details id="legend">
-      <summary>Légende</summary>
-      <p><span class="legend-border"></span>Contour : couleur du site (= sa courbe)</p>
-      <p style="margin-bottom:4px">Centre : taux de <em>Myzus</em> de la dernière analyse</p>
-      <div class="legend-gradient"></div>
-      <div class="legend-scale"><span>0-1 %</span><span>10 %</span><span>100 %</span></div>
-      <p><span class="legend-grey"></span>Pas d'analyse <em>Myzus</em></p>
-      <p class="legend-note">Touchez ou survolez un site pour le détail. Le taux de <em>Myzus</em> est estimé sur un échantillon de 20 pucerons capturés par site.</p>
-    </details>
+  <div id="topbar">
+    <span class="site-titre">Réseau de piégeage des pucerons</span>
+    <label>Année :
+      <select id="choix-annee"></select>
+    </label>
+    <nav>
+      <a href="index.html" class="actif">Carte par année</a>
+      <a href="annees.html">Toutes les années</a>
+    </nav>
+  </div>
+  <div id="avertissement">
+    ⚠️ Ces données font état de captures <strong>passées</strong> (relevés tous les 3 à 4 jours).
+    Elles permettent de suivre la dynamique des vols de pucerons, mais ne constituent pas un avertissement
+    et ne doivent pas servir à déclencher une intervention de traitement.
   </div>
 
-  <div id="chart-container">
-    <div id="chart-header">
-      <div class="titre" id="titre">📊 Captures de pucerons</div>
-      <div class="maj" id="maj"></div>
+  <div id="main">
+    <div id="map">
+      <details id="legend">
+        <summary>Légende</summary>
+        <p><span class="legend-border"></span>Contour : couleur du site (= sa courbe)</p>
+        <p style="margin-bottom:4px">Centre : taux de <em>Myzus</em> de la dernière analyse</p>
+        <div class="legend-gradient"></div>
+        <div class="legend-scale"><span>0-1 %</span><span>10 %</span><span>100 %</span></div>
+        <p><span class="legend-grey"></span>Pas d'analyse <em>Myzus</em></p>
+        <p class="legend-note">Touchez ou survolez un site pour le détail. Le taux de <em>Myzus</em> est estimé sur un échantillon de 20 pucerons capturés par site.</p>
+      </details>
     </div>
-    <div id="chart"></div>
-    <button id="reset-button" type="button">Afficher toute la saison</button>
+
+    <div id="chart-container">
+      <div id="chart-header">
+        <div class="titre" id="titre">📊 Captures de pucerons</div>
+        <div class="maj" id="maj"></div>
+      </div>
+      <div id="chart"></div>
+      <button id="reset-button" type="button">Afficher toute la saison</button>
+    </div>
   </div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -105,29 +123,27 @@
                     'juillet','août','septembre','octobre','novembre','décembre'];
     const JOURS_VUE_RECENTE = 21;
     const petitEcran = window.matchMedia('(max-width: 800px)').matches;
+    const fr = n => Number(n).toLocaleString('fr-FR');
 
     function formatDateFR(dateStr) {
-      const d = new Date(dateStr + 'T12:00:00');
+      const d = new Date(dateStr.slice(0, 10) + 'T12:00:00');
       return `${d.getDate()} ${moisFR[d.getMonth()]}`;
     }
+    const jour = dateStr => new Date(dateStr + 'T12:00:00');
 
-    const sitesActifs = sites.filter(s => s.data && s.data.length > 0);
+    // ── Années disponibles (la plus récente d'abord) ──
+    const annees = Object.keys(donneesAnnees).sort().reverse();
+    const anneeCourante = String(majDonnees.annee);
+    const select = document.getElementById('choix-annee');
+    annees.forEach(a => select.add(new Option(a, a)));
+    const demandee = new URLSearchParams(location.search).get('annee');
+    let anneeAffichee = annees.includes(demandee) ? demandee : anneeCourante;
+    select.value = anneeAffichee;
 
-    // ── En-tête : année et date de mise à jour ──
-    const info = (typeof majDonnees !== 'undefined') ? majDonnees : null;
-    const annee = info && info.annee ? info.annee
-                : (sitesActifs.length ? sitesActifs[0].data[0].date.slice(0, 4) : '');
-    document.getElementById('titre').textContent = `📊 Captures de pucerons ${annee}`;
-    if (info && info.dernierReleve) {
-      const gen = info.generation ? info.generation.slice(0, 10) : null;
-      document.getElementById('maj').textContent =
-        `Dernier relevé : ${formatDateFR(info.dernierReleve)}` +
-        (gen ? ` · mise à jour le ${formatDateFR(gen)}` : '');
-    }
     if (!petitEcran) document.getElementById('legend').open = true;
 
     // ── Carte ──
-    const map = L.map('map').setView([48.0, -3.5], petitEcran ? 7 : 8);
+    const map = L.map('map').setView([48.2, -3.5], petitEcran ? 7 : 8);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
@@ -157,96 +173,137 @@
     });
     new LogoControl().addTo(map);
 
+    const coucheSites = L.layerGroup().addTo(map);
+    let sitesActifs = [];
     let siteSelectionne = null;
-
-    sitesActifs.forEach((site, idx) => {
-      const aMyzus = site.myzusTaux !== null && site.myzusTaux !== undefined;
-      const marker = L.circleMarker(site.coords, {
-        color: site.color,
-        weight: 3,
-        radius: petitEcran ? 10 : 8,
-        fillOpacity: aMyzus ? 0.9 : 0.6,
-        fillColor: aMyzus ? (site.myzusColor || '#fff5f0') : '#d0d0d0',
-        dashArray: null
-      }).addTo(map);
-
-      const lastData = site.data[site.data.length - 1];
-      let tt = `<strong>${site.name}</strong><br>`;
-      tt += aMyzus
-        ? `Taux Myzus : ${site.myzusTaux.toLocaleString('fr-FR')} %${site.myzusDate ? ` (${site.myzusDate})` : ''}<br>`
-        : `Pas d'analyse Myzus<br>`;
-      if (lastData) {
-        tt += `Dernier relevé : ${Number(lastData.count).toLocaleString('fr-FR')} pucerons (${formatDateFR(lastData.date)})`;
-      }
-
-      // Survol à la souris (ordinateur) et clic / toucher (téléphone)
-      if (!petitEcran) marker.bindTooltip(tt);
-      marker.bindPopup(tt);
-      marker.on('mouseover', () => { if (siteSelectionne === null) highlightTrace(idx); });
-      marker.on('mouseout',  () => { if (siteSelectionne === null) resetTraces(); });
-      marker.on('click', () => { siteSelectionne = idx; highlightTrace(idx); });
-      marker.on('popupclose', () => { siteSelectionne = null; resetTraces(); });
-    });
-
-    // ── Graphique : uniquement les relevés réels, reliés par des droites ──
-    const traces = sitesActifs.map(site => ({
-      x: site.data.map(d => d.date),
-      y: site.data.map(d => Number(d.count)),
-      name: site.name,
-      type: 'scatter',
-      mode: 'lines+markers',
-      connectgaps: true,
-      line: { color: site.color, width: 2 },
-      marker: { size: site.data.length === 1 ? 10 : 4, color: site.color },
-      hovertemplate: `<b>${site.name}</b><br>%{x|%d %B} : %{y} pucerons<extra></extra>`
-    }));
-
-    const allDates = sitesActifs.flatMap(site => site.data.map(d => new Date(d.date + 'T12:00:00')));
-    const maxDate = new Date(Math.max(...allDates));
-    const minDate = new Date(Math.min(...allDates));
-    maxDate.setDate(maxDate.getDate() + 1);   // petite marge pour voir le dernier point
-    minDate.setDate(minDate.getDate() - 1);
-    const debutVueRecente = new Date(maxDate);
-    debutVueRecente.setDate(maxDate.getDate() - JOURS_VUE_RECENTE);
-    const vueRecente = [debutVueRecente < minDate ? minDate : debutVueRecente, maxDate].map(d => d.toISOString());
-    const vueComplete = [minDate.toISOString(), maxDate.toISOString()];
+    let vueRecente, vueComplete, vueEntiere = false;
+    const bouton = document.getElementById('reset-button');
 
     // Échelle verticale adaptée aux données visibles
     function maxVisible(range) {
       const [a, b] = range.map(r => new Date(r));
       let m = 0;
       sitesActifs.forEach(s => s.data.forEach(d => {
-        const t = new Date(d.date + 'T12:00:00');
+        const t = jour(d.date);
         if (t >= a && t <= b && d.count > m) m = d.count;
       }));
       return m > 0 ? m * 1.1 : 1;
     }
 
+    function afficherAnnee(annee) {
+      anneeAffichee = annee;
+      sitesActifs = (donneesAnnees[annee] || []).filter(s => s.data && s.data.length > 0);
+      siteSelectionne = null;
+      map.closePopup();
+
+      // En-tête
+      document.getElementById('titre').textContent = `📊 Captures de pucerons ${annee}`;
+      const tous = sitesActifs.flatMap(s => s.data.map(d => d.date)).sort();
+      let texte = '';
+      if (annee === anneeCourante && majDonnees.dernierReleve) {
+        texte = `Dernier relevé : ${formatDateFR(majDonnees.dernierReleve)}` +
+          (majDonnees.generation ? ` · mise à jour le ${formatDateFR(majDonnees.generation)}` : '');
+      } else if (tous.length) {
+        texte = `Saison terminée : relevés du ${formatDateFR(tous[0])} au ${formatDateFR(tous[tous.length - 1])}`;
+      }
+      document.getElementById('maj').textContent = texte;
+
+      // Sites sur la carte
+      coucheSites.clearLayers();
+      sitesActifs.forEach((site, idx) => {
+        const aMyzus = site.myzusTaux !== null && site.myzusTaux !== undefined;
+        const marker = L.circleMarker(site.coords, {
+          color: site.color,
+          weight: 3,
+          radius: petitEcran ? 10 : 8,
+          fillOpacity: aMyzus ? 0.9 : 0.6,
+          fillColor: aMyzus ? (site.myzusColor || '#fff5f0') : '#d0d0d0'
+        }).addTo(coucheSites);
+
+        const lastData = site.data[site.data.length - 1];
+        let tt = `<strong>${site.name}</strong><br>`;
+        tt += aMyzus
+          ? `Taux Myzus : ${fr(site.myzusTaux)} %${site.myzusDate ? ` (${site.myzusDate})` : ''}<br>`
+          : `Pas d'analyse Myzus<br>`;
+        if (lastData) {
+          tt += `Dernier relevé : ${fr(lastData.count)} pucerons/jour (${formatDateFR(lastData.date)})`;
+        }
+
+        // Survol à la souris (ordinateur) et clic / toucher (téléphone)
+        if (!petitEcran) marker.bindTooltip(tt);
+        marker.bindPopup(tt);
+        marker.on('mouseover', () => { if (siteSelectionne === null) highlightTrace(idx); });
+        marker.on('mouseout',  () => { if (siteSelectionne === null) resetTraces(); });
+        marker.on('click', () => { siteSelectionne = idx; highlightTrace(idx); });
+        marker.on('popupclose', () => { siteSelectionne = null; resetTraces(); });
+      });
+
+      // Graphique : uniquement les relevés réels, reliés par des droites
+      const traces = sitesActifs.map(site => ({
+        x: site.data.map(d => d.date),
+        y: site.data.map(d => Number(d.count)),
+        name: site.name,
+        type: 'scatter',
+        mode: 'lines+markers',
+        connectgaps: true,
+        line: { color: site.color, width: 2 },
+        marker: { size: site.data.length === 1 ? 10 : 4, color: site.color },
+        hovertemplate: `<b>${site.name}</b><br>%{x|%d %B} : %{y} pucerons/jour<extra></extra>`
+      }));
+
+      const dates = tous.map(jour);
+      const maxDate = new Date(Math.max(...dates));
+      const minDate = new Date(Math.min(...dates));
+      maxDate.setDate(maxDate.getDate() + 1);
+      minDate.setDate(minDate.getDate() - 1);
+      const debut = new Date(maxDate);
+      debut.setDate(maxDate.getDate() - JOURS_VUE_RECENTE);
+      vueRecente = [debut < minDate ? minDate : debut, maxDate].map(d => d.toISOString());
+      vueComplete = [minDate.toISOString(), maxDate.toISOString()];
+
+      // Année en cours : on montre les dernières semaines ; années passées : toute la saison
+      vueEntiere = annee !== anneeCourante;
+      const r = vueEntiere ? vueComplete : vueRecente;
+      majBouton();
+
+      Plotly.react('chart', traces, {
+        margin: petitEcran ? { t: 10, r: 10, b: 40, l: 45 } : { t: 10, r: 20, b: 60, l: 55 },
+        hovermode: 'closest',
+        showlegend: true,
+        legend: petitEcran
+          ? { orientation: 'h', x: 0, y: -0.15, yanchor: 'top', font: { size: 10 } }
+          : {},
+        xaxis: {
+          type: 'date',
+          range: r,
+          tickformat: '%d/%m',
+          rangeslider: petitEcran ? { visible: false } : { visible: true, yaxis: { rangemode: 'auto' } }
+        },
+        yaxis: { title: { text: 'Pucerons capturés par jour' }, range: [0, maxVisible(r)] }
+      }, { responsive: true, displaylogo: false, locale: 'fr' });
+    }
+
+    function majBouton() {
+      bouton.textContent = vueEntiere ? `Afficher les ${JOURS_VUE_RECENTE} derniers jours` : 'Afficher toute la saison';
+    }
+
     Plotly.setPlotConfig({ locale: 'fr' });
-    Plotly.newPlot('chart', traces, {
-      margin: petitEcran ? { t: 10, r: 10, b: 40, l: 45 } : { t: 10, r: 20, b: 60, l: 55 },
-      hovermode: 'closest',
-      showlegend: true,
-      legend: petitEcran
-        ? { orientation: 'h', x: 0, y: -0.15, yanchor: 'top', font: { size: 10 } }
-        : {},
-      xaxis: {
-        type: 'date',
-        range: vueRecente,
-        tickformat: '%d/%m',
-        rangeslider: petitEcran ? { visible: false } : { visible: true, yaxis: { rangemode: 'auto' } }
-      },
-      yaxis: { title: { text: 'Nombre de pucerons' }, range: [0, maxVisible(vueRecente)] }
-    }, { responsive: true, displaylogo: false, locale: 'fr' });
+    afficherAnnee(anneeAffichee);
+
+    select.addEventListener('change', () => {
+      const url = new URL(location.href);
+      if (select.value === anneeCourante) url.searchParams.delete('annee');
+      else url.searchParams.set('annee', select.value);
+      history.replaceState(null, '', url);
+      afficherAnnee(select.value);
+    });
 
     // Le bouton bascule entre la saison complète et les dernières semaines
-    let vueEntiere = false;
-    const bouton = document.getElementById('reset-button');
     bouton.addEventListener('click', () => {
       vueEntiere = !vueEntiere;
       const r = vueEntiere ? vueComplete : vueRecente;
       Plotly.relayout('chart', { 'xaxis.range': r, 'yaxis.range': [0, maxVisible(r)] });
-      bouton.textContent = vueEntiere ? `Afficher les ${JOURS_VUE_RECENTE} derniers jours` : 'Afficher toute la saison';
+      majBouton();
     });
 
     // Quand l'utilisateur zoome à la main, l'échelle verticale suit
