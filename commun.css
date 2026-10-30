@@ -19,11 +19,17 @@ body { display: flex; flex-direction: column; height: 100vh; height: 100dvh; }
 
 #avertissement {
   background: #fff3cd; color: #5c4400; border-bottom: 1px solid #e6d28a;
-  padding: 6px 16px; font-size: 0.85rem; line-height: 1.35;
+  padding: 6px 44px 6px 16px; font-size: 0.85rem; line-height: 1.35; position: relative;
 }
+.fermer-avertissement {
+  position: absolute; top: 4px; right: 6px;
+  width: 30px; height: 30px; border: none; border-radius: 50%;
+  background: rgba(92, 68, 0, 0.12); color: #5c4400; font-size: 1rem; cursor: pointer;
+}
+.fermer-avertissement:hover { background: rgba(92, 68, 0, 0.25); }
 
 @media (max-width: 800px) {
   #topbar { padding: 6px 10px; }
   #topbar .site-titre { font-size: 0.9rem; width: 100%; }
-  #avertissement { padding: 5px 10px; font-size: 0.75rem; }
+  #avertissement { padding: 5px 40px 5px 10px; font-size: 0.75rem; }
 }

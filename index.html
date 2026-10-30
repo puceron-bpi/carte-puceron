@@ -41,10 +41,19 @@
       padding: 10px 15px;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
       font-size: 0.9rem;
-      z-index: 1000;
+      z-index: 1001; /* au-dessus du logo et des contrôles Leaflet (1000) */
       max-width: 300px;
     }
     #legend summary { font-weight: bold; cursor: pointer; }
+    /* Légende ouverte : le titre devient un bouton « ✕ Fermer la légende » bien visible */
+    #legend .lg-fermer { display: none; }
+    #legend[open] .lg-ouvrir { display: none; }
+    #legend[open] .lg-fermer {
+      display: inline-block; padding: 3px 8px; border-radius: 4px;
+      background: #2f3b2f; color: white; font-size: 0.85em;
+    }
+    #legend[open] summary { list-style: none; }
+    #legend[open] summary::-webkit-details-marker { display: none; }
     #legend p { margin: 8px 0; }
     .legend-border, .legend-grey {
       display: inline-block; width: 16px; height: 16px;
@@ -77,11 +86,13 @@
          et le contenu défile s'il dépasse la hauteur de la carte. */
       #legend {
         left: auto; bottom: auto; top: 8px; right: 8px;
-        max-width: 230px; max-height: calc(100% - 16px); overflow-y: auto;
+        /* 30 px libres en bas pour la mention OpenStreetMap */
+        max-width: 230px; max-height: calc(100% - 38px); overflow-y: auto;
         padding: 6px 10px; font-size: 0.8rem;
       }
       #legend summary { position: sticky; top: 0; background: white; padding: 2px 0; }
       .leaflet-control-logo img { height: 36px; }
+      .leaflet-control-attribution { font-size: 9px; }
     }
   </style>
   <!-- Compteur de visites GoatCounter (sans cookies). Ne compte pas les visites en local. -->
@@ -107,7 +118,7 @@
   <div id="main">
     <div id="map">
       <details id="legend">
-        <summary>Légende</summary>
+        <summary><span class="lg-ouvrir">Légende</span><span class="lg-fermer">✕ Fermer la légende</span></summary>
         <p><span class="legend-border"></span>Contour : couleur du site (= sa courbe)</p>
         <p style="margin-bottom:4px">Centre : taux de <em>Myzus</em> de la dernière analyse</p>
         <div class="legend-gradient"></div>
@@ -169,10 +180,12 @@
       maxZoom: 13
     });
     // Dézoom maximal = toute la Bretagne ; vue de départ = les pièges de l'année affichée.
+    // Mention en bas de carte réduite au minimum : « © OpenStreetMap » est obligatoire (licence ODbL)
+    map.attributionControl.setPrefix(false);
     map.fitBounds(bretagne, { padding: [4, 4], animate: false });
     map.setMinZoom(map.getZoom());
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap contributors'
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>'
     }).addTo(map);
 
     // Page ouverte par double-clic sur index.html : OpenStreetMap refuse alors le fond de carte.
@@ -373,6 +386,7 @@
 
     window.addEventListener('resize', () => map.invalidateSize());
   </script>
+  <script src="avertissement.js"></script>
   <script src="pwa.js"></script>
   <script src="notifications.js"></script>
 </body>
