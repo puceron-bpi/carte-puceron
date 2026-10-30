@@ -89,7 +89,10 @@
       // Sur téléphone, graphique figé : toucher affiche la valeur sans zoomer ni déplacer
       dragmode: petitEcran ? false : 'zoom',
       xaxis: { type: 'date', tickformat: '%d %b', fixedrange: petitEcran },
-      yaxis: { title: { text: 'Pucerons capturés par jour (moyenne du réseau)' }, rangemode: 'tozero', fixedrange: petitEcran }
+      yaxis: {
+        title: { text: petitEcran ? 'Pucerons / jour (moyenne)' : 'Pucerons capturés par jour (moyenne du réseau)', standoff: 4 },
+        rangemode: 'tozero', fixedrange: petitEcran, automargin: true
+      }
     }, { responsive: true, displaylogo: false, locale: 'fr',
          displayModeBar: !petitEcran, scrollZoom: false, doubleClick: !petitEcran && 'reset' });
   </script>

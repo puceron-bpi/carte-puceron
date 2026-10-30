@@ -297,7 +297,10 @@
           fixedrange: petitEcran,
           rangeslider: petitEcran ? { visible: false } : { visible: true, yaxis: { rangemode: 'auto' } }
         },
-        yaxis: { title: { text: 'Pucerons capturés par jour' }, range: [0, maxVisible(r)], fixedrange: petitEcran }
+        yaxis: {
+          title: { text: petitEcran ? 'Pucerons / jour' : 'Pucerons capturés par jour', standoff: 4 },
+          range: [0, maxVisible(r)], fixedrange: petitEcran, automargin: true
+        }
       }, { responsive: true, displaylogo: false, locale: 'fr',
            displayModeBar: !petitEcran, scrollZoom: false, doubleClick: !petitEcran && 'reset' });
     }
