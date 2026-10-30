@@ -4,13 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Carte interactive des sites de collecte de pucerons</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <style>
-    body { margin: 0; padding: 0; font-family: sans-serif; }
-    #map { width: 50%; height: 100vh; float: left; position: relative; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; height: 100%; font-family: sans-serif; color: #222; }
+    body { display: flex; height: 100vh; height: 100dvh; }
+
+    #map { flex: 1 1 50%; height: 100%; position: relative; }
     .leaflet-container { background: white !important; }
-    #chart-container { width: 50%; height: 100vh; float: left; display: flex; flex-direction: column; }
-    #chart { flex: 1; }
+    #chart-container { flex: 1 1 50%; height: 100%; display: flex; flex-direction: column; min-width: 0; }
+    #chart { flex: 1; min-height: 0; }
+
+    #chart-header {
+      padding: 8px 16px;
+      background: #f5f5f5;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+    }
+    #chart-header .titre { font-size: 0.95rem; font-weight: bold; }
+    #chart-header .maj { font-size: 0.8rem; color: #555; margin-top: 2px; }
+
     #reset-button { padding: 10px; border: none; background-color: #333; color: white; cursor: pointer; font-size: 1rem; }
     #reset-button:hover { background-color: #555; }
 
@@ -22,20 +35,25 @@
       border-radius: 8px;
       padding: 10px 15px;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       z-index: 1000;
       max-width: 300px;
     }
-    #legend h4 { margin: 0 0 8px; font-size: 1rem; }
-    .legend-border, .legend-center {
+    #legend summary { font-weight: bold; cursor: pointer; }
+    #legend p { margin: 8px 0; }
+    .legend-border, .legend-grey {
       display: inline-block; width: 16px; height: 16px;
       margin-right: 8px; vertical-align: middle; border-radius: 50%;
     }
-    .legend-border { background: white; border: 3px solid #e41a1c; }
-    .legend-center { background: #e41a1c; border: 2px solid black; }
-    .legend-note { font-size: 0.85em; color: #555; margin-top: 10px; }
+    .legend-border { background: white; border: 3px solid #377eb8; }
+    .legend-grey { background: #d0d0d0; border: 2px dashed #888; }
+    .legend-gradient {
+      height: 10px; border-radius: 4px; border: 1px solid #ccc;
+      background: linear-gradient(to right, #fff5f0, #fcbba1, #fb6a4a, #cb181d, #67000d);
+    }
+    .legend-scale { display: flex; justify-content: space-between; font-size: 0.75rem; color: #555; }
+    .legend-note { font-size: 0.8em; color: #555; }
 
-    /* Logo contrôle Leaflet — fond totalement transparent */
     .leaflet-control-logo {
       background: transparent !important;
       border: none !important;
@@ -43,48 +61,50 @@
       padding: 0 !important;
       margin: 0 10px 10px 0 !important;
     }
-    .leaflet-control-logo img {
-      height: 56px;
-      display: block;
-      background: transparent;
-    }
+    .leaflet-control-logo img { height: 56px; display: block; }
 
-    #chart-header {
-      padding: 8px 16px;
-      background: #f5f5f5;
-      border-bottom: 1px solid #ddd;
-      font-size: 0.95rem;
-      font-weight: bold;
-      color: #333;
-      text-align: center;
+    /* Téléphone / petit écran : carte au-dessus, graphique en dessous */
+    @media (max-width: 800px) {
+      body { flex-direction: column; }
+      #map { flex: 0 0 42%; height: auto; }
+      #chart-container { flex: 1 1 auto; height: auto; }
+      #legend { left: 8px; bottom: 8px; max-width: 220px; padding: 6px 10px; font-size: 0.8rem; }
+      .leaflet-control-logo img { height: 36px; }
     }
   </style>
 </head>
 <body>
   <div id="map">
-    <div id="legend">
-      <h4>Légende</h4>
-      <p><span class="legend-border"></span> Couleur du site (correspond à la courbe)</p>
-      <p><span class="legend-center"></span> Centre coloré : taux estimé de <em>Myzus</em> (%)</p>
-      <p style="font-size: 0.9em; margin-top: 8px;">Survolez un point pour voir la date et le taux</p>
-      <p class="legend-note">⚠️ Le taux de <em>Myzus</em> est estimé sur un échantillon de 20 pucerons capturés par site.</p>
-    </div>
+    <details id="legend">
+      <summary>Légende</summary>
+      <p><span class="legend-border"></span>Contour : couleur du site (= sa courbe)</p>
+      <p style="margin-bottom:4px">Centre : taux de <em>Myzus</em> de la dernière analyse</p>
+      <div class="legend-gradient"></div>
+      <div class="legend-scale"><span>0-1 %</span><span>10 %</span><span>100 %</span></div>
+      <p><span class="legend-grey"></span>Pas d'analyse <em>Myzus</em></p>
+      <p class="legend-note">Touchez ou survolez un site pour le détail. Le taux de <em>Myzus</em> est estimé sur un échantillon de 20 pucerons capturés par site.</p>
+    </details>
   </div>
 
   <div id="chart-container">
-    <div id="chart-header">📊 Données captures pucerons 2026</div>
+    <div id="chart-header">
+      <div class="titre" id="titre">📊 Captures de pucerons</div>
+      <div class="maj" id="maj"></div>
+    </div>
     <div id="chart"></div>
-    <button id="reset-button" onclick="resetZoom()">Afficher toutes les données</button>
+    <button id="reset-button" type="button">Afficher toute la saison</button>
   </div>
 
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-locale-fr-2.35.2.js"></script>
   <script src="sites_data.js"></script>
-  <script src="https://cdn.plot.ly/plotly-locale-fr-latest.js"></script>
 
   <script>
     const moisFR = ['janvier','février','mars','avril','mai','juin',
                     'juillet','août','septembre','octobre','novembre','décembre'];
+    const JOURS_VUE_RECENTE = 21;
+    const petitEcran = window.matchMedia('(max-width: 800px)').matches;
 
     function formatDateFR(dateStr) {
       const d = new Date(dateStr + 'T12:00:00');
@@ -93,103 +113,150 @@
 
     const sitesActifs = sites.filter(s => s.data && s.data.length > 0);
 
-    const map = L.map('map').setView([48.0, -3.5], 8);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap contributors'
-    }).addTo(map);
+    // ── En-tête : année et date de mise à jour ──
+    const info = (typeof majDonnees !== 'undefined') ? majDonnees : null;
+    const annee = info && info.annee ? info.annee
+                : (sitesActifs.length ? sitesActifs[0].data[0].date.slice(0, 4) : '');
+    document.getElementById('titre').textContent = `📊 Captures de pucerons ${annee}`;
+    if (info && info.dernierReleve) {
+      const gen = info.generation ? info.generation.slice(0, 10) : null;
+      document.getElementById('maj').textContent =
+        `Dernier relevé : ${formatDateFR(info.dernierReleve)}` +
+        (gen ? ` · mise à jour le ${formatDateFR(gen)}` : '');
+    }
+    if (!petitEcran) document.getElementById('legend').open = true;
 
-    // ── Logo comme contrôle Leaflet natif ──
+    // ── Carte ──
+    const map = L.map('map').setView([48.0, -3.5], petitEcran ? 7 : 8);
+    // OpenStreetMap refuse les fonds de carte quand la page est ouverte depuis le disque
+    // (double-clic sur index.html) : on prend alors le fond CARTO, qui reste basé sur OSM.
+    if (location.protocol === 'file:') {
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+        subdomains: 'abcd'
+      }).addTo(map);
+    } else {
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(map);
+    }
+
     const LogoControl = L.Control.extend({
       options: { position: 'bottomright' },
       onAdd: function() {
         const div = L.DomUtil.create('div', 'leaflet-control-logo');
         const img = L.DomUtil.create('img', '', div);
-        img.src = 'logo.png';   // fichier dans le même dossier
+        img.src = 'logo.png';
         img.alt = 'Bretagne Plants Innovation';
         return div;
       }
     });
     new LogoControl().addTo(map);
 
+    let siteSelectionne = null;
+
     sitesActifs.forEach((site, idx) => {
+      const aMyzus = site.myzusTaux !== null && site.myzusTaux !== undefined;
       const marker = L.circleMarker(site.coords, {
         color: site.color,
-        radius: 8,
-        fillOpacity: 0.8,
-        fillColor: site.myzusColor || 'white'
+        weight: 3,
+        radius: petitEcran ? 10 : 8,
+        fillOpacity: aMyzus ? 0.9 : 0.6,
+        fillColor: aMyzus ? (site.myzusColor || '#fff5f0') : '#d0d0d0',
+        dashArray: null
       }).addTo(map);
 
       const lastData = site.data[site.data.length - 1];
       let tt = `<strong>${site.name}</strong><br>`;
-      if (site.myzusDate && site.myzusTaux !== null && site.myzusTaux !== undefined) {
-        tt += `Date Myzus : ${site.myzusDate}<br>Taux Myzus : ${site.myzusTaux}%<br>`;
-      } else {
-        tt += `Aucune donnée Myzus récente<br>`;
-      }
+      tt += aMyzus
+        ? `Taux Myzus : ${site.myzusTaux.toLocaleString('fr-FR')} %${site.myzusDate ? ` (${site.myzusDate})` : ''}<br>`
+        : `Pas d'analyse Myzus<br>`;
       if (lastData) {
-        tt += `Dernière donnée : ${lastData.count} pucerons/jour (${formatDateFR(lastData.date)})`;
+        tt += `Dernier relevé : ${Number(lastData.count).toLocaleString('fr-FR')} pucerons (${formatDateFR(lastData.date)})`;
       }
 
-      marker.bindTooltip(tt);
-      marker.on('mouseover', () => highlightTrace(idx));
-      marker.on('mouseout', () => resetTraces());
+      // Survol à la souris (ordinateur) et clic / toucher (téléphone)
+      if (!petitEcran) marker.bindTooltip(tt);
+      marker.bindPopup(tt);
+      marker.on('mouseover', () => { if (siteSelectionne === null) highlightTrace(idx); });
+      marker.on('mouseout',  () => { if (siteSelectionne === null) resetTraces(); });
+      marker.on('click', () => { siteSelectionne = idx; highlightTrace(idx); });
+      marker.on('popupclose', () => { siteSelectionne = null; resetTraces(); });
     });
 
+    // ── Graphique : uniquement les relevés réels, reliés par des droites ──
     const traces = sitesActifs.map(site => ({
-  x: site.data.map(d => d.date),
-  y: site.data.map(d => Number(d.count)),
-  name: site.name,
-  mode: site.data.length === 1 ? 'markers' : 'lines+markers',
-  connectgaps: true,
-  line: {
-    color: site.color,
-    width: 2
-  },
-  marker: {
-    size: site.data.length === 1 ? 10 : 6,
-    color: site.color
-  }
-}));
+      x: site.data.map(d => d.date),
+      y: site.data.map(d => Number(d.count)),
+      name: site.name,
+      type: 'scatter',
+      mode: 'lines+markers',
+      connectgaps: true,
+      line: { color: site.color, width: 2 },
+      marker: { size: site.data.length === 1 ? 10 : 6, color: site.color },
+      hovertemplate: `<b>${site.name}</b><br>%{x|%d %B} : %{y} pucerons<extra></extra>`
+    }));
 
-    const allDates = sitesActifs.flatMap(site => site.data.map(d => new Date(d.date)));
+    const allDates = sitesActifs.flatMap(site => site.data.map(d => new Date(d.date + 'T12:00:00')));
     const maxDate = new Date(Math.max(...allDates));
     const minDate = new Date(Math.min(...allDates));
-    const initialStartDate = new Date(maxDate);
-    initialStartDate.setDate(maxDate.getDate() - 7);
+    maxDate.setDate(maxDate.getDate() + 1);   // petite marge pour voir le dernier point
+    minDate.setDate(minDate.getDate() - 1);
+    const debutVueRecente = new Date(maxDate);
+    debutVueRecente.setDate(maxDate.getDate() - JOURS_VUE_RECENTE);
+    const vueRecente = [debutVueRecente < minDate ? minDate : debutVueRecente, maxDate].map(d => d.toISOString());
+    const vueComplete = [minDate.toISOString(), maxDate.toISOString()];
+
+    // Échelle verticale adaptée aux données visibles
+    function maxVisible(range) {
+      const [a, b] = range.map(r => new Date(r));
+      let m = 0;
+      sitesActifs.forEach(s => s.data.forEach(d => {
+        const t = new Date(d.date + 'T12:00:00');
+        if (t >= a && t <= b && d.count > m) m = d.count;
+      }));
+      return m > 0 ? m * 1.1 : 1;
+    }
 
     Plotly.setPlotConfig({ locale: 'fr' });
     Plotly.newPlot('chart', traces, {
-      margin: { t: 10, r: 20, b: 60, l: 55 },
+      margin: petitEcran ? { t: 10, r: 10, b: 40, l: 45 } : { t: 10, r: 20, b: 60, l: 55 },
+      hovermode: 'closest',
+      showlegend: true,
+      legend: petitEcran
+        ? { orientation: 'h', x: 0, y: -0.15, yanchor: 'top', font: { size: 10 } }
+        : {},
       xaxis: {
-        title: 'Date',
         type: 'date',
-        range: [initialStartDate.toISOString(), maxDate.toISOString()],
+        range: vueRecente,
         tickformat: '%d/%m',
-        dtick: 86400000,
-        rangeslider: { visible: true, yaxis: { visible: false }, tickformat: '%d/%m' }
+        rangeslider: petitEcran ? { visible: false } : { visible: true, yaxis: { rangemode: 'auto' } }
       },
-      yaxis: { title: 'Nombre de pucerons', autorange: true }
+      yaxis: { title: { text: 'Nombre de pucerons' }, range: [0, maxVisible(vueRecente)] }
+    }, { responsive: true, displaylogo: false, locale: 'fr' });
+
+    // Le bouton bascule entre la saison complète et les dernières semaines
+    let vueEntiere = false;
+    const bouton = document.getElementById('reset-button');
+    bouton.addEventListener('click', () => {
+      vueEntiere = !vueEntiere;
+      const r = vueEntiere ? vueComplete : vueRecente;
+      Plotly.relayout('chart', { 'xaxis.range': r, 'yaxis.range': [0, maxVisible(r)] });
+      bouton.textContent = vueEntiere ? `Afficher les ${JOURS_VUE_RECENTE} derniers jours` : 'Afficher toute la saison';
     });
 
-    function resetZoom() {
-      Plotly.relayout('chart', {
-        'xaxis.range': [minDate.toISOString(), maxDate.toISOString()],
-        'xaxis.dtick': 86400000,
-        'xaxis.tickformat': '%d/%m'
-      });
-    }
+    // Quand l'utilisateur zoome à la main, l'échelle verticale suit
+    document.getElementById('chart').on('plotly_relayout', ev => {
+      const r = ev['xaxis.range'];
+      const a = r ? r[0] : ev['xaxis.range[0]'], b = r ? r[1] : ev['xaxis.range[1]'];
+      if (a && b) Plotly.relayout('chart', { 'yaxis.range': [0, maxVisible([a, b])] });
+      else if (ev['xaxis.autorange']) Plotly.relayout('chart', { 'yaxis.range': [0, maxVisible(vueComplete)] });
+    });
 
     function highlightTrace(index) {
       Plotly.restyle('chart', {
         'line.width': sitesActifs.map((_, i) => i === index ? 4 : 1),
         'opacity': sitesActifs.map((_, i) => i === index ? 1 : 0.2)
-      });
-    }
-
-    function restraces() {
-      Plotly.restyle('chart', {
-        'line.width': sitesActifs.map(() => 2),
-        'opacity': sitesActifs.map(() => 1)
       });
     }
 
@@ -199,6 +266,8 @@
         'opacity': sitesActifs.map(() => 1)
       });
     }
+
+    window.addEventListener('resize', () => map.invalidateSize());
   </script>
 </body>
 </html>
