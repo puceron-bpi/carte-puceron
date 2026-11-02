@@ -148,6 +148,7 @@
   <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
   <script src="https://cdn.plot.ly/plotly-locale-fr-2.35.2.js"></script>
   <script src="sites_data.js"></script>
+  <script src="annees_data.js"></script>
 
   <script>
     const moisFR = ['janvier','février','mars','avril','mai','juin',
@@ -226,6 +227,14 @@
     const bouton = document.getElementById('reset-button');
 
     // Échelle verticale adaptée aux données visibles
+    // Normale : moyenne du réseau sur toutes les années (annees_data.js), recalée sur l'année affichée
+    const normaleDispo = typeof moyenneGlobale !== 'undefined' && moyenneGlobale.length > 0;
+    const anneesNormale = typeof moyennesAnnees !== 'undefined' ? Object.keys(moyennesAnnees).sort() : [];
+    const nomNormale = anneesNormale.length
+      ? `Moyenne ${anneesNormale[0]}-${anneesNormale[anneesNormale.length - 1]}` : 'Moyenne des années';
+    const pointsNormale = annee => normaleDispo
+      ? moyenneGlobale.map(p => ({ date: `${annee}-${p.j}`, v: p.v })) : [];
+
     function maxVisible(range) {
       const [a, b] = range.map(r => new Date(r));
       let m = 0;
@@ -233,6 +242,10 @@
         const t = jour(d.date);
         if (t >= a && t <= b && d.count > m) m = d.count;
       }));
+      pointsNormale(anneeAffichee).forEach(p => {
+        const t = jour(p.date);
+        if (t >= a && t <= b && p.v > m) m = p.v;
+      });
       return m > 0 ? m * 1.1 : 1;
     }
 
@@ -297,6 +310,21 @@
         marker: { size: site.data.length === 1 ? 10 : 4, color: site.color },
         hovertemplate: `<b>${site.name}</b><br>%{x|%d %B} : %{y} pucerons/jour<extra></extra>`
       }));
+
+      // Courbe de la normale, en pointillés noirs, placée en premier dans la légende
+      const normale = pointsNormale(annee);
+      if (normale.length) {
+        traces.push({
+          x: normale.map(p => p.date),
+          y: normale.map(p => p.v),
+          name: petitEcran ? 'Moyenne réseau' : `${nomNormale} (réseau)`,
+          type: 'scatter',
+          mode: 'lines',
+          line: { color: '#222', width: 2.5, dash: 'dot' },
+          legendrank: 1,
+          hovertemplate: `<b>${nomNormale}</b><br>%{x|%d %B} : %{y} pucerons/jour (moyenne du réseau)<extra></extra>`
+        });
+      }
 
       const dates = tous.map(jour);
       const maxDate = new Date(Math.max(...dates));
@@ -377,18 +405,21 @@
       else if (ev['xaxis.autorange']) Plotly.relayout('chart', { 'yaxis.range': [0, maxVisible(vueComplete)] });
     });
 
+    // Mise en avant d'un site : ne touche que les courbes des sites (pas la normale)
+    const indicesSites = () => sitesActifs.map((_, i) => i);
+
     function highlightTrace(index) {
       Plotly.restyle('chart', {
         'line.width': sitesActifs.map((_, i) => i === index ? 4 : 1),
         'opacity': sitesActifs.map((_, i) => i === index ? 1 : 0.2)
-      });
+      }, indicesSites());
     }
 
     function resetTraces() {
       Plotly.restyle('chart', {
         'line.width': sitesActifs.map(() => 2),
         'opacity': sitesActifs.map(() => 1)
-      });
+      }, indicesSites());
     }
 
     window.addEventListener('resize', () => map.invalidateSize());
