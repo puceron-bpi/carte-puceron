@@ -1,6 +1,8 @@
 /* Styles partagés par la carte (index.html) et la page « Toutes les années » (annees.html) */
 * { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; height: 100%; font-family: sans-serif; color: #222; }
+/* Fond clair imposé : sinon le mode sombre du téléphone rend le texte illisible */
+:root { color-scheme: light; }
+html, body { margin: 0; padding: 0; height: 100%; font-family: sans-serif; color: #222; background: #fff; }
 body { display: flex; flex-direction: column; height: 100vh; height: 100dvh; }
 
 #topbar {
@@ -32,4 +34,9 @@ body { display: flex; flex-direction: column; height: 100vh; height: 100dvh; }
   #topbar { padding: 6px 10px; }
   #topbar .site-titre { font-size: 0.9rem; width: 100%; }
   #avertissement { padding: 5px 40px 5px 10px; font-size: 0.75rem; }
+}
+
+/* Lien « À propos » : icône seule sur téléphone pour garder la barre compacte */
+@media (max-width: 800px) {
+  #topbar nav .txt-apropos { display: none; }
 }

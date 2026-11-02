@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pucerons : à propos et mentions légales</title>
+  <link rel="stylesheet" href="commun.css" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#2f3b2f" />
+  <link rel="icon" href="icones/icone-192.png" />
+  <link rel="apple-touch-icon" href="icones/apple-touch-icon.png" />
+  <style>
+    body { height: auto; min-height: 100vh; display: block; }
+    main { max-width: 760px; margin: 0 auto; padding: 16px 16px 48px; line-height: 1.55; font-size: 0.95rem; }
+    h1 { font-size: 1.35rem; margin: 8px 0 4px; }
+    h2 { font-size: 1.1rem; margin: 28px 0 6px; padding-bottom: 4px; border-bottom: 2px solid #e6e2d3; color: #2f3b2f; }
+    p, li { margin: 6px 0; }
+    ul { padding-left: 20px; }
+    .encadre { background: #fff3cd; border: 1px solid #e6d28a; color: #5c4400; border-radius: 6px; padding: 10px 14px; }
+    .a-completer { background: #ffe08a; padding: 0 4px; border-radius: 3px; font-weight: bold; }
+    dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 16px; margin: 8px 0; }
+    dt { font-weight: bold; }
+    dd { margin: 0; }
+    @media (max-width: 600px) { dl { grid-template-columns: 1fr; } dd { margin-bottom: 6px; } }
+    .maj-page { color: #777; font-size: 0.8rem; margin-top: 32px; }
+  </style>
+  <!-- Compteur de visites GoatCounter (sans cookies). Ne compte pas les visites en local. -->
+  <script data-goatcounter="https://puceron-bpi.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</head>
+<body>
+  <div id="topbar">
+    <span class="site-titre">Réseau de piégeage des pucerons</span>
+    <nav>
+      <a href="index.html">Carte par année</a>
+      <a href="annees.html">Toutes les années</a>
+      <a href="apropos.html" class="actif">À propos</a>
+    </nav>
+  </div>
+
+  <main>
+    <h1>À propos du réseau de piégeage</h1>
+
+    <div class="encadre">
+      ⚠️ Ces données font état de captures <strong>passées</strong>. Elles permettent de suivre la dynamique
+      des vols de pucerons, mais ne constituent pas un avertissement et ne doivent pas servir à déclencher
+      une intervention de traitement.
+    </div>
+
+    <h2>Les données</h2>
+    <ul>
+      <li>Des pièges à pucerons sont installés chaque saison sur des sites de production de plants en Bretagne.
+        Ils sont relevés tous les 3 à 4 jours environ, du printemps à l'été.</li>
+      <li><strong>Pucerons capturés par jour</strong> : nombre de pucerons d'un relevé divisé par le nombre de jours
+        depuis le relevé précédent (ou depuis la pose du piège pour le premier relevé). La courbe relie les relevés
+        par des droites.</li>
+      <li><strong>Taux de <em>Myzus persicae</em></strong> : estimé sur un échantillon de 20 pucerons capturés par site,
+        lors de la dernière analyse disponible. Un contour en pointillés indique qu'aucune analyse n'est disponible.</li>
+      <li><strong>Toutes les années</strong> : moyenne de tous les sites suivis chaque année ; les sites peuvent changer
+        d'une année à l'autre.</li>
+    </ul>
+
+    <h2>Notifications</h2>
+    <p>Le bouton « 🔔 M'avertir des mises à jour » permet de recevoir une notification quand de nouveaux relevés
+      sont publiés. Pour arrêter, touchez « 🔕 Ne plus m'avertir » ou retirez l'autorisation dans les réglages
+      de votre navigateur. Sur iPhone, les notifications ne fonctionnent qu'après avoir ajouté le site à l'écran
+      d'accueil.</p>
+
+    <h2>Mentions légales</h2>
+    <dl>
+      <dt>Éditeur</dt>
+      <dd>Bretagne Plants Innovation<br>
+          471 lieu-dit la Gare, 29460 Hanvec</dd>
+      <dt>Directeur de la publication</dt>
+      <dd>Le président de Bretagne Plants Innovation</dd>
+      <dt>Contact</dt>
+      <dd><a href="mailto:bretplants@plantsdebretagne.com">bretplants@plantsdebretagne.com</a></dd>
+      <dt>Hébergement</dt>
+      <dd>GitHub Pages — GitHub, Inc., 88 Colin P. Kelly Jr Street, San Francisco, CA 94107, États-Unis.</dd>
+    </dl>
+    <p>Les données de piégeage sont la propriété de l'éditeur. Toute réutilisation doit en citer la source.</p>
+
+    <h2>Données personnelles et confidentialité</h2>
+    <ul>
+      <li><strong>Aucun cookie</strong> n'est déposé par ce site.</li>
+      <li><strong>Mesure d'audience</strong> : le site utilise GoatCounter, un outil de statistiques sans cookie qui
+        ne permet pas d'identifier les visiteurs (pages vues, type de navigateur, taille d'écran, pays approximatif).</li>
+      <li><strong>Notifications</strong> : si vous vous abonnez, le service OneSignal (OneSignal, Inc., États-Unis)
+        enregistre un identifiant technique d'abonnement et des informations sur l'appareil (navigateur, système,
+        langue, fuseau horaire, dates de visite). Ces informations servent uniquement à envoyer les notifications
+        et ne sont plus utilisées dès que vous vous désabonnez. Aucun nom, e-mail ni numéro de téléphone
+        n'est demandé.</li>
+      <li><strong>Contenus tiers</strong> : pour afficher la carte et les graphiques, votre navigateur charge des
+        éléments depuis OpenStreetMap, unpkg.com et cdn.plot.ly ; ces services reçoivent votre adresse IP,
+        comme pour toute page web.</li>
+      <li><strong>Mémoire du navigateur</strong> : si vous fermez le bandeau d'avertissement, ce choix est retenu
+        30 jours sur votre appareil, sans être transmis.</li>
+      <li>Conformément au RGPD, vous pouvez demander l'accès à vos données ou leur suppression en écrivant à
+        <a href="mailto:bretplants@plantsdebretagne.com">bretplants@plantsdebretagne.com</a>.</li>
+    </ul>
+
+    <h2>Crédits</h2>
+    <p>Fonds de carte © <a href="https://www.openstreetmap.org/copyright" target="_blank">contributeurs OpenStreetMap</a>.
+      Carte : Leaflet. Graphiques : Plotly.</p>
+
+    <p class="maj-page">Page mise à jour le 2 novembre 2026.</p>
+  </main>
+
+  <script src="pwa.js"></script>
+  <script src="notifications.js"></script>
+</body>
+</html>
